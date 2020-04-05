@@ -1,16 +1,16 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1586072952699.000,
+    "created" : 1586076473038.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "4070494937",
-    "id" : "AD3BF6E2",
-    "lastKnownWriteTime" : 1586075369,
-    "last_content_update" : 1586075369932,
-    "path" : "~/D/projects/test/config.toml",
-    "project_path" : "config.toml",
+    "hash" : "1542943790",
+    "id" : "38C0749C",
+    "lastKnownWriteTime" : 1585844148,
+    "last_content_update" : 1585844148,
+    "path" : "~/D/projects/test/index.Rmd",
+    "project_path" : "index.Rmd",
     "properties" : {
     },
     "read_only" : false,
@@ -19,5 +19,5 @@
     "relative_order" : 1,
     "source_on_save" : false,
     "source_window" : "",
-    "type" : "toml"
+    "type" : "r_markdown"
 }

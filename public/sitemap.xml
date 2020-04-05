@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/authors/hugo-authors/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/markdown/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/03/09/placeholder-text/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/text/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url>
@@ -19,6 +54,11 @@
   
   <url>
     <loc>/eustat/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/07/23/hello-r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
@@ -63,15 +103,6 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/hugo-authors/</loc>
-  </url>
-  
-  <url>
     <loc>/authors/jane-smith/</loc>
   </url>
   
@@ -80,15 +111,7 @@
   </url>
   
   <url>
-    <loc>/authors/</loc>
-  </url>
-  
-  <url>
     <loc>/tags/index/</loc>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
   </url>
   
   <url>

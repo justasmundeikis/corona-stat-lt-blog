@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Placeholder Text</title>
+      <link>/2019/03/09/placeholder-text/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/03/09/placeholder-text/</guid>
+      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de
+pectora summo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
@@ -28,6 +38,17 @@
       <guid>/eustat/</guid>
       <description>Europa - žemėlapiai Užsikrėtimai (abs.)  Užsikrėtimai (/pop.)  Nauji (abs.) Žemiau pateikiamas naujų registruotų atvejų absoliutus skaičiaus pokytis per paskutinę parą (2020-04-03 - 2020-04-04 ). Iš šio žemėlapio galima matyti, kur atsirado daugiausiai naujų atvejų.
  Nauji (proc.) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutinę parą (2020-04-03 - 2020-04-04 ). Žemėlapyje atvaizduojamos tik šalys turinčios daugiau nei 10 regsitruotų atvejų. Šis žemėlapis iliustruoja aktyviųs koronaviruso židinius pasaulyje.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/2015/07/23/hello-r-markdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/2015/07/23/hello-r-markdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>
     
     <item>
