@@ -1,15 +1,15 @@
 baseURL = "/"
 title = "Corona-Stat.lt"
 #copyright = "Copyright © rancia and the Hugo Authors; all rights reserved."
-paginate = 2
+paginate = 3
 languageCode = "lt"
 DefaultContentLanguage = "lt"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
-googleAnalytics = "UA-XXXX"
-DisqusShortname = ""
+googleAnalytics = "UA-162832540-1"
+DisqusShortname = "corona-stat-lt"
 theme = "hugo-theme-chunky-poster"
-
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [menu]
   [[menu.main]]
     identifier = "home"
@@ -48,7 +48,7 @@ author = "authors"
 
 [params]
 author = "Hugo Authors"
-description = "Lorem ipsum dolor sit amet."
+description = "Su COVID-19 paplitimu susijusi statistika ir ekonomiminės įžvalgos"
 homepageImage = "/images/logo.png"
 share = true
 showLanguageSwitcher = false
@@ -59,10 +59,10 @@ showLanguageSwitcher = false
 
   [params.social]
     rss = true
-    email = "example@example.com"
-    facebook = "https://facebook.com"
-    instagram = "https://stackoverflow.com"
-    github = "https://github.com"
+    email = "corona-stat@protonmail.com"
+    facebook = "https://www.facebook.com/coronastat/"
+    #instagram = "https://stackoverflow.com"
+    #github = "https://github.com"
 
 
   [params.prismJS]
