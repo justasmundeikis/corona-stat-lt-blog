@@ -1,0 +1,266 @@
+---
+title: "Lietuvos statistika"
+author: "Justas Mundeikis"
+date: 2015-07-23T21:13:14-05:00
+categories: ["R"]
+tags: ["Lietuva", "statisika"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, collapse = TRUE, error = TRUE, warning = FALSE, message = FALSE, cache = TRUE)
+```
+
+```{r, include=FALSE}
+source("./scripts/loading_R_packets.R")
+source("./scripts/data_import_GS.R")
+```
+
+```{r, include=FALSE}
+data_lt_country <- read.csv("./data/data_lt_country.csv",header = TRUE,stringsAsFactors = FALSE)%>%
+  mutate(date=as.Date(date),
+         var=factor(var, levels=c("confirmed","active", "recovered", "deaths")))
+
+data_lt_country_cum <- read.csv("./data/data_lt_country_cum.csv",header = TRUE,stringsAsFactors = FALSE)%>%
+  mutate(date=as.Date(date),
+         var=factor(var, levels=c("confirmed","active", "recovered", "deaths")))
+
+data_lt_county <- read.csv("./data/data_lt_county.csv",header = TRUE,stringsAsFactors = FALSE)%>%
+  mutate(date=as.Date(date),
+         var=factor(var, levels=c("confirmed","active", "recovered", "deaths")))
+
+data_lt_county_cum <- read.csv("./data/data_lt_county_cum.csv",header = TRUE,stringsAsFactors = FALSE)%>%
+  mutate(date=as.Date(date),
+         var=factor(var, levels=c("confirmed","active", "recovered", "deaths")))
+
+data_lt <- read.csv("./data/data_lt.csv",header = TRUE,stringsAsFactors = FALSE)%>%
+  mutate(date=as.Date(date))
+
+data_lv <- read.csv("./data/data_lv.csv",header = TRUE,stringsAsFactors = FALSE)%>%
+  mutate(date=as.Date(date))
+
+data_ee <- read.csv("./data/data_ee.csv",header = TRUE,stringsAsFactors = FALSE)%>%
+  mutate(date=as.Date(date))
+
+demo_r_pjangrp <- get_eurostat("demo_r_pjangrp3", 
+                               stringsAsFactors = FALSE, 
+                               filters = list(age="TOTAL",
+                                              sex="T",
+                                              time="2019"))%>%
+        rename(NUTS_ID=geo,
+               pop=values)
+```
+
+
+```{r}
+df <- data_lt_country_cum %>%
+        filter(date==max(date))%>%
+        spread(var, values)
+time_now <- format(Sys.time(), "%Y-%m-%d %H:%M")
+```
+
+Naujausiais duomenimis (`r time_now`) Lietuvoje šiuo metu yra:
+        
+* iš viso registruotų atvejų - `r df$confirmed `
+* iš jų pasveiko - `r df$recovered `
+* iš jų mirė - `r df$deaths`
+* likęs aktyvių atvejų  skaičius - `r df$active `
+
+## Bendras atvejų skaičius
+```{r, echo=FALSE}
+
+df <- data_lt_county_cum%>%
+        filter(var!="confirmed") %>%
+        mutate(var=factor(var, levels=c("active", "recovered", "deaths")))%>%
+        group_by(date, var)%>%
+        summarise(values=sum(values))
+
+max.date <- max(df$date)
+
+ggplot(df, aes(x=date, y=values, fill=var))+
+        geom_area(alpha=0.5)+
+        scale_fill_manual(values=c("red", "green", "black"),
+                          labels=c("Aktyvūs", "Pasveikę", "Mirę") )+
+        scale_x_date(breaks="1 day")+
+        labs(title=paste0("Lietuvos koronaviruso atvejų skaičius ir pasiskirstymas (naujausi duomenys ", max.date, ")"),
+             subtitle = "Šaltinis ir skaičiavimai: Corona-Stat.lt",
+             x="Data",
+             y="Skaičius")+
+        theme(legend.title=element_blank(),
+              legend.position='bottom',
+              axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Naujų atvejų skaičius
+```{r, echo=FALSE}
+
+df <- data_lt_country%>%
+        filter(var=="confirmed",
+               date>="2020-02-28")
+
+
+max.date <- max(df$date)
+
+ggplot(df, aes(x=date, y=values, fill=var))+
+        geom_bar( stat = "identity",
+                  fill="steelblue")+
+        scale_x_date(breaks="1 day")+
+        geom_text(aes(label=values, y=values), size=2.5, vjust=-0.5)+
+        labs(title=paste0("Naujų atvejų skaičius (naujausi duomenys ", max.date, ")"),
+             subtitle = "Šaltinis ir skaičiavimai: Corona-Stat.lt",
+             x="Data",
+             y="Skaičius")+
+        theme(legend.title=element_blank(),
+              legend.position='bottom',
+              axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Ištyrimai
+
+Lietuvoje testuojamų asmenų skaičius nėra didelis (palyginus su Latvija ar Estija) dėl ypatingai mažo turimų reagentų skaičiaus. Todėl 2020-03-21/22 dienomis netgi buvo [apribotas mėginių ėmimas Kauno ir Klaipėdos mobiliame punkte. 2020-02-21 Lietuvoje buvo apie 1300 reagentų (2020-02-21 atlitki 384 testai).](https://www.15min.lt/naujiena/aktualu/lietuva/likus-700-reagentu-gali-buti-tiriami-ne-visi-eminiai-is-mobiliosios-patikros-punktu-56-1293308). 
+
+```{r}
+pop <- demo_r_pjangrp%>%
+        filter(NUTS_ID %in% c("LT", "LV", "EE"))%>%
+        select(NUTS_ID, pop)%>%
+        spread(NUTS_ID,pop)
+
+lt <- data_lt %>%
+        select(date, tested_total)%>%
+        rename(tested_total_lt=tested_total)
+
+lv <- data_lv %>%
+        select(date, tested_total)%>%
+        rename(tested_total_lv=tested_total)
+
+ee <- data_ee %>%
+        select(date, tested_total)%>%
+        rename(tested_total_ee=tested_total)
+
+df <- merge(lt,lv)%>% merge(.,ee) %>%
+        mutate(
+                tested_total_lt_p=tested_total_lt/pop$LT*1000,
+                tested_total_lv_p=tested_total_lv/pop$LV*1000,
+                tested_total_ee_p=tested_total_ee/pop$EE*1000
+        )%>%
+        gather(var, values, 2:7)%>%
+        mutate(case=rep(c("Skaičius", "Skaičius tenkantis 1000 gyventojų"), each=nrow(.)/2),
+               geo=rep(c("Lietuva", "Latvija", "Estija"), each=nrow(lt), times=2))
+
+ggplot(df, aes(date, values, col=geo))+
+        geom_line(size=1.1)+
+        geom_point(size=2)+
+        scale_color_brewer(palette="Set1",type = "qualitative", name="Valstybės")+
+        labs(
+                title="Testavimo apimtys Baltijos šalyse",
+                subtitle="Šaltinis ir skaičiavimai: Corona-Stat.lt",
+                x="Laikotarpis",
+                y="Skaičius"
+        )+
+        scale_x_date(breaks = "2 day")+
+        theme(legend.position = "bottom",
+              axis.text=element_text(size=8),
+              axis.text.x=element_text(angle=45, hjust=1))+
+        facet_wrap(~case, scales = "free_y")
+```
+
+## Atvejai / ištyrimai (cum)
+
+```{r}
+lt_1 <- data_lt %>%
+        select(date, tested_total)%>%
+        rename(tested_total_lt=tested_total)
+
+lt_2 <- data_lt_country_cum %>%
+        filter(var=="confirmed")%>%
+        select(date, values)%>%
+        rename(conf_total_lt=values)
+
+lv <- data_lv %>%
+        select(date, conf_total ,tested_total)%>%
+        rename(conf_total_lv=conf_total,
+               tested_total_lv=tested_total)
+
+ee <- data_ee %>%
+        select(date,conf_total, tested_total)%>%
+        rename(conf_total_ee=conf_total,
+               tested_total_ee=tested_total)
+
+df <- merge(lt_1,lt_2) %>% merge(.,lv) %>% merge(.,ee)%>%
+        mutate(
+                Lietuva=conf_total_lt/tested_total_lt*100,
+                Latvija=conf_total_lv/tested_total_lv*100,
+                Estija=conf_total_ee/tested_total_ee*100
+        )%>%
+        select(1,8,9,10)%>%
+        gather(geo, values, 2:4)
+
+ggplot(df, aes(date, values, col=geo))+
+        geom_line(size=1.1)+
+        geom_point(size=2)+
+        scale_color_brewer(palette="Set1",type = "qualitative", name="Valstybės")+
+        labs(
+                title="Santykis tarp aptiktų atvejų ir atliktų testų (kumuliatyvūs)",
+                subtitle="Šaltinis ir skaičiavimai: Corona-Stat.lt",
+                x="Laikotarpis",
+                y="Santykis"
+        )+
+        scale_x_date(breaks = "2 day")+
+        theme(legend.position = "bottom",
+              axis.text=element_text(size=8),
+              axis.text.x=element_text(angle=45, hjust=1))
+
+
+
+```
+
+
+## Atvejai / ištyrimai
+
+```{r}
+lt_1 <- data_lt %>%
+        select(date, tested_new)%>%
+        rename(tested_new_lt=tested_new)
+
+lt_2 <- data_lt_country %>%
+        filter(var=="confirmed")%>%
+        select(date, values)%>%
+        rename(conf_new_lt=values)
+
+lv <- data_lv %>%
+        select(date, conf_new ,tested_new)%>%
+        rename(conf_new_lv=conf_new,
+               tested_new_lv=tested_new)
+
+ee <- data_ee %>%
+        select(date,conf_new, tested_new)%>%
+        rename(conf_new_ee=conf_new,
+               tested_new_ee=tested_new)
+
+df <- merge(lt_1,lt_2) %>% merge(.,lv) %>% merge(.,ee)%>%
+        mutate(
+                Lietuva=conf_new_lt/tested_new_lt*100,
+                Latvija=conf_new_lv/tested_new_lv*100,
+                Estija=conf_new_ee/tested_new_ee*100
+        )%>%
+        select(1,8,9,10)%>%
+        gather(geo, values, 2:4)
+
+ggplot(df, aes(date, values, col=geo))+
+        geom_line(size=1.1)+
+        geom_point(size=2)+
+        scale_y_continuous(breaks = seq(0,30,2))+
+        scale_color_brewer(palette="Set1",type = "qualitative", name="Valstybės")+
+        labs(
+                title="Santykis tarp aptiktų atvejų ir atliktų testų",
+                subtitle="Šaltinis ir skaičiavimai: Corona-Stat.lt",
+                x="Laikotarpis",
+                y="Santykis"
+        )+
+        scale_x_date(breaks = "2 day")+
+        theme(legend.position = "bottom",
+              axis.text=element_text(size=8),
+              axis.text.x=element_text(angle=45, hjust=1))
+
+
+
+```

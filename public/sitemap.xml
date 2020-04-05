@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://corona-stat.lt/</loc>
+    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/about/</loc>
+    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/categories/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/eustat/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/tags/lietuva/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/ltstat/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/wstat/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/tags/plot/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/categories/r/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/tags/r-markdown/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/tags/regression/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/tags/statisika/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/tags/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/authors/hugo-authors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/authors/jane-smith/</loc>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/authors/john-doe/</loc>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/tags/index/</loc>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/post/</loc>
+  </url>
+  
+  <url>
+    <loc>https://corona-stat.lt/series/</loc>
+  </url>
+  
+</urlset>
