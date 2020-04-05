@@ -3,96 +3,96 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/temp/</loc>
+    <loc>/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/eustat/</loc>
+    <loc>/eustat/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/tags/lietuva/</loc>
+    <loc>/tags/lietuva/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/ltstat/</loc>
+    <loc>/ltstat/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/wstat/</loc>
+    <loc>/wstat/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/tags/plot/</loc>
+    <loc>/tags/plot/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/categories/r/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/tags/r-markdown/</loc>
+    <loc>/tags/r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/tags/regression/</loc>
+    <loc>/tags/regression/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/tags/statisika/</loc>
+    <loc>/tags/statisika/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/temp/authors/hugo-authors/</loc>
+    <loc>/authors/hugo-authors/</loc>
   </url>
   
   <url>
-    <loc>/temp/authors/jane-smith/</loc>
+    <loc>/authors/jane-smith/</loc>
   </url>
   
   <url>
-    <loc>/temp/authors/john-doe/</loc>
+    <loc>/authors/john-doe/</loc>
   </url>
   
   <url>
-    <loc>/temp/authors/</loc>
+    <loc>/authors/</loc>
   </url>
   
   <url>
-    <loc>/temp/tags/index/</loc>
+    <loc>/tags/index/</loc>
   </url>
   
   <url>
-    <loc>/temp/post/</loc>
+    <loc>/post/</loc>
   </url>
   
   <url>
-    <loc>/temp/series/</loc>
+    <loc>/series/</loc>
   </url>
   
 </urlset>

@@ -1,4 +1,4 @@
-baseURL = "https://justasmundeikis.github.io/temp"
+baseURL = ""
 title = "Corona-Stat.lt"
 #copyright = "Copyright © rancia and the Hugo Authors; all rights reserved."
 paginate = 2
