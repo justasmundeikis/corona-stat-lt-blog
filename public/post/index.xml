@@ -6,29 +6,18 @@
     <description>Recent content in Posts on Corona-Stat.lt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>lt</language>
-    <lastBuildDate>Sun, 05 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Info apie tinklapio pasikeitimus</title>
-      <link>/2020/04/05/info-apie-tinklapio-pasikeitimus/</link>
-      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      <link>/2020/04/06/info-apie-tinklapio-pasikeitimus/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/04/05/info-apie-tinklapio-pasikeitimus/</guid>
-      <description>Čia atsiraus info&amp;hellip;.s</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/2020/04/06/info-apie-tinklapio-pasikeitimus/</guid>
+      <description>Prasidėjo 4 karantino savaitė Lietuvoje. Ekonomiškai skausmingos priemonės visgi pradeda rodyti savo efektyvumą – atvejų skaičius didėja labiau dėl testavimo apimčių, o ne viruso plitimo: atvejų ir atliktų testų santykis išlieka ganėtinai stabilus, pastebima mažėjimo tendencija. Tai suponuoja, jog arba karantinas buvo veiksminga priemonė suvaldyti viruso plitimą, arba, jog testuojame ne tuos asmenis. Visgi liekame nusiteikę optimistiškai ir manome, jog Lietuvai pavyks išvengti Italijos, Ispanijos bei JAV scenarijų, kai ligoninės tampa tokios apgultos, jog medikų pagalbos ranka tampa nebeprieinama ne tik COVID-19 viruso nešiotojams, bet ir kitiems pacientams, dėl ko sparčiai didėja mirtingumas šalyje.</description>
     </item>
     
   </channel>

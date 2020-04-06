@@ -1,7 +1,7 @@
 baseURL = "/"
 title = "Corona-Stat.lt"
 #copyright = "Copyright © rancia and the Hugo Authors; all rights reserved."
-paginate = 3
+paginate = 10
 languageCode = "lt"
 DefaultContentLanguage = "lt"
 enableInlineShortcodes = true
@@ -10,6 +10,7 @@ googleAnalytics = "UA-162832540-1"
 DisqusShortname = "corona-stat-lt"
 theme = "hugo-theme-chunky-poster"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
 [menu]
   [[menu.main]]
     identifier = "home"
@@ -41,15 +42,15 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     post = "/:year/:month/:day/:slug/"
     
 [taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
-author = "authors"
+  category = "categories"
+  tag = "tags"
+  series = "series"
+  author = "authors"
 
 [params]
-author = "Hugo Authors"
-description = "Su COVID-19 paplitimu susijusi statistika ir ekonomiminės įžvalgos"
-homepageImage = "/images/logo.png"
+#author = "Corona-Stat.lt"
+description = "COVID-19 statistika, ekonomiminės, socialinės bei politinės įžvalgos"
+#homepageImage = "/images/corona-stat-logo_16_9.png"
 share = true
 showLanguageSwitcher = false
 
@@ -70,7 +71,7 @@ showLanguageSwitcher = false
     theme = ""
 
   [params.commento]
-    enable = true
+    enable = false
     url = "https://commento.io"
 
 [markup]

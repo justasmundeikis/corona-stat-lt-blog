@@ -1,6 +1,5 @@
 ---
 images:
-- armitne-globyte.jpg
+- arminte-globyte.jpg
 name: Armintė Globytė
 ---
-
