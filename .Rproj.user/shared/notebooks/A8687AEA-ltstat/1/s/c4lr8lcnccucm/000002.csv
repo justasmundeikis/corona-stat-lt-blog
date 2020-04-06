@@ -1,4 +1,0 @@
-"0","df <- data_lt_country_cum %>%"
-"0","        filter(date==max(date))%>%"
-"0","        spread(var, values)"
-"0","time_now <- format(Sys.time(), ""%Y-%m-%d %H:%M"")"

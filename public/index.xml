@@ -17,7 +17,7 @@
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/04/05/info-apie-tinklapio-pasikeitimus/</guid>
-      <description></description>
+      <description>Čia atsiraus info&amp;hellip;.s</description>
     </item>
     
     <item>
@@ -35,8 +35,8 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/eustat/</guid>
-      <description>Europa - žemėlapiai Užsikrėtimai (abs.)  Užsikrėtimai (/pop.)  Nauji (abs.) Žemiau pateikiamas naujų registruotų atvejų absoliutus skaičiaus pokytis per paskutinę parą (2020-04-03 - 2020-04-04 ). Iš šio žemėlapio galima matyti, kur atsirado daugiausiai naujų atvejų.
- Nauji (proc.) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutinę parą (2020-04-03 - 2020-04-04 ). Žemėlapyje atvaizduojamos tik šalys turinčios daugiau nei 10 regsitruotų atvejų. Šis žemėlapis iliustruoja aktyviųs koronaviruso židinius pasaulyje.</description>
+      <description>Europa - žemėlapiai Užsikrėtimai (abs.)  Užsikrėtimai (/pop.)  Nauji (abs.) Žemiau pateikiamas naujų registruotų atvejų absoliutus skaičiaus pokytis per paskutinę parą (2020-04-04 - 2020-04-05 ). Iš šio žemėlapio galima matyti, kur atsirado daugiausiai naujų atvejų.
+ Nauji (proc.) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutinę parą (2020-04-04 - 2020-04-05 ). Žemėlapyje atvaizduojamos tik šalys turinčios daugiau nei 10 regsitruotų atvejų. Šis žemėlapis iliustruoja aktyviųs koronaviruso židinius pasaulyje.</description>
     </item>
     
     <item>
@@ -56,8 +56,8 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/ltstat/</guid>
-      <description>Naujausiais duomenimis (2020-04-05 10:51) Lietuvoje šiuo metu yra:
- iš viso registruotų atvejų - 811 iš jų pasveiko - 7 iš jų mirė - 10 likęs aktyvių atvejų skaičius - 794  Bendras atvejų skaičius  Naujų atvejų skaičius  Ištyrimai Lietuvoje testuojamų asmenų skaičius nėra didelis (palyginus su Latvija ar Estija) dėl ypatingai mažo turimų reagentų skaičiaus. Todėl 2020-03-21/22 dienomis netgi buvo apribotas mėginių ėmimas Kauno ir Klaipėdos mobiliame punkte.</description>
+      <description>Naujausiais duomenimis (2020-04-06 13:48) Lietuvoje šiuo metu yra:
+ iš viso registruotų atvejų - 843 iš jų pasveiko - 7 iš jų mirė - 14 likęs aktyvių atvejų skaičius - 822  Bendras atvejų skaičius  Naujų atvejų skaičius  Ištyrimai Lietuvoje testuojamų asmenų skaičius nėra didelis (palyginus su Latvija ar Estija) dėl ypatingai mažo turimų reagentų skaičiaus. Todėl 2020-03-21/22 dienomis netgi buvo apribotas mėginių ėmimas Kauno ir Klaipėdos mobiliame punkte.</description>
     </item>
     
     <item>
@@ -67,8 +67,8 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
       
       <guid>/wstat/</guid>
       <description>Pasaulinė statistika Žemiau pateikiama atrinkta statistika, kuri leidžia geriau įvertinti coronos viruso paplitimą pasaulyje.
-Pasaulis - žemėlapiai Užsikrėtimai (abs.)  Užsikrėtimai (/pop.)  Nauji (abs.) Žemiau pateikiamas naujų registruotų atvejų absoliutus skaičiaus pokytis per paskutinę parą (2020-04-03 - 2020-04-04). Iš šio žemėlapio galima matyti, kur atsirado daugiausiai naujų atvejų.
- Nauji (proc.) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutinę parą (2020-04-03 - 2020-04-04 ). Žemėlapyje atvaizduojamos tik šalys turinčios daugiau nei 500 regsitruotų atvejų.</description>
+Pasaulis - žemėlapiai Užsikrėtimai (abs.)  Užsikrėtimai (/pop.)  Nauji (abs.) Žemiau pateikiamas naujų registruotų atvejų absoliutus skaičiaus pokytis per paskutinę parą (2020-04-04 - 2020-04-05). Iš šio žemėlapio galima matyti, kur atsirado daugiausiai naujų atvejų.
+ Nauji (proc.) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutinę parą (2020-04-04 - 2020-04-05 ). Žemėlapyje atvaizduojamos tik šalys turinčios daugiau nei 500 regsitruotų atvejų.</description>
     </item>
     
   </channel>
