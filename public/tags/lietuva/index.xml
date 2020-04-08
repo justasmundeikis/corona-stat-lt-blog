@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lietuva on Corona-Stat.lt</title>
-    <link>/tags/lietuva/</link>
+    <link>https://corona-stat.lt/tags/lietuva/</link>
     <description>Recent content in Lietuva on Corona-Stat.lt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>lt</language>
     <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="/tags/lietuva/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://corona-stat.lt/tags/lietuva/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lietuvos statistika</title>
-      <link>/ltstat/</link>
+      <link>https://corona-stat.lt/ltstat/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/ltstat/</guid>
-      <description>Naujausiais duomenimis (2020-04-08 09:19) Lietuvoje šiuo metu yra:
- iš viso registruotų atvejų - 880 iš jų pasveiko - 7 iš jų mirė - 15 likęs aktyvių atvejų skaičius - 858  Bendras atvejų skaičius  Naujų atvejų skaičius  Ištyrimai Lietuvoje testuojamų asmenų skaičius nėra didelis (palyginus su Latvija ar Estija) dėl ypatingai mažo turimų reagentų skaičiaus. Todėl 2020-03-21/22 dienomis netgi buvo apribotas mėginių ėmimas Kauno ir Klaipėdos mobiliame punkte.</description>
+      <guid>https://corona-stat.lt/ltstat/</guid>
+      <description>Naujausiais duomenimis (2020-04-08 10:26) Lietuvoje šiuo metu yra:
+ iš viso registruotų atvejų - 912 iš jų pasveiko - 7 iš jų mirė - 15 likęs aktyvių atvejų skaičius - 890  Bendras atvejų skaičius  Naujų atvejų skaičius  Ištyrimai Lietuvoje testuojamų asmenų skaičius nėra didelis (palyginus su Latvija ar Estija) dėl ypatingai mažo turimų reagentų skaičiaus. Todėl 2020-03-21/22 dienomis netgi buvo apribotas mėginių ėmimas Kauno ir Klaipėdos mobiliame punkte.</description>
     </item>
     
   </channel>

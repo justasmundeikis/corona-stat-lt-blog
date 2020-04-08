@@ -5,8 +5,7 @@ authors:
 - Justas Mundeikis
 date: "2020-04-08"
 description: COVID-19 testavimas turi būti paremtas duomenų analize, o sprendimą ką ir kiek testuoti turi priimti epidemiologai, o ne politikai
-images:
-- 2020-04-08-cost-benefit.jpg
+images: [2020-04-08-cost-benefit.jpg]
 tags:
 - testavimas
 - efektyvumas
