@@ -4,4 +4,4 @@ images:
 name: Justas Mundeikis
 ---
 
-Info
+Ekonomistas, lektorius, blogger'is ir šiuo metu doktorantas. Visa info [Lithuanian-Economy.net](Lithuanian-Economy.net)
