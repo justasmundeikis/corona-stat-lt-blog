@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://corona-stat.lt"
 title = "Corona-Stat.lt"
 #copyright = "Copyright © rancia and the Hugo Authors; all rights reserved."
 paginate = 10
@@ -9,7 +9,7 @@ footnoteReturnLinkContents = "^"
 googleAnalytics = "UA-162832540-1"
 DisqusShortname = "corona-stat-lt"
 theme = "hugo-theme-chunky-poster"
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+#ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [menu]
   [[menu.main]]
