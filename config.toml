@@ -1,4 +1,4 @@
-baseURL = "https://corona-stat.lt"
+baseURL = "/"
 title = "Corona-Stat.lt"
 #copyright = "Copyright © rancia and the Hugo Authors; all rights reserved."
 paginate = 10
