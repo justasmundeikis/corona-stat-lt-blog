@@ -48,6 +48,33 @@
     </item>
     
     <item>
+      <title>COVID-19</title>
+      <link>/tags/covid-19/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/tags/covid-19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Europa</title>
+      <link>/tags/europa/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/tags/europa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>koronavirusas</title>
+      <link>/tags/koronavirusas/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/tags/koronavirusas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Lietuva</title>
       <link>/tags/lietuva/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
@@ -57,29 +84,11 @@
     </item>
     
     <item>
-      <title>plot</title>
-      <link>/tags/plot/</link>
+      <title>pasaulis</title>
+      <link>/tags/pasaulis/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/plot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R Markdown</title>
-      <link>/tags/r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/tags/r-markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regression</title>
-      <link>/tags/regression/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/tags/regression/</guid>
+      <guid>/tags/pasaulis/</guid>
       <description></description>
     </item>
     
@@ -89,6 +98,15 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/tags/statisika/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistika</title>
+      <link>/tags/statistika/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/tags/statistika/</guid>
       <description></description>
     </item>
     
