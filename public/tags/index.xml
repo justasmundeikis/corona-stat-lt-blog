@@ -2,120 +2,120 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Corona-Stat.lt</title>
-    <link>/tags/</link>
+    <link>https://corona-stat.lt/tags/</link>
     <description>Recent content in Tags on Corona-Stat.lt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://corona-stat.lt/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>efektyvumas</title>
-      <link>/tags/efektyvumas/</link>
+      <link>https://corona-stat.lt/tags/efektyvumas/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/efektyvumas/</guid>
+      <guid>https://corona-stat.lt/tags/efektyvumas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>testavimas</title>
-      <link>/tags/testavimas/</link>
+      <link>https://corona-stat.lt/tags/testavimas/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/testavimas/</guid>
+      <guid>https://corona-stat.lt/tags/testavimas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>corona-stat.lt</title>
-      <link>/tags/corona-stat.lt/</link>
+      <link>https://corona-stat.lt/tags/corona-stat.lt/</link>
       <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/corona-stat.lt/</guid>
+      <guid>https://corona-stat.lt/tags/corona-stat.lt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>info</title>
-      <link>/tags/info/</link>
+      <link>https://corona-stat.lt/tags/info/</link>
       <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/info/</guid>
+      <guid>https://corona-stat.lt/tags/info/</guid>
       <description></description>
     </item>
     
     <item>
       <title>COVID-19</title>
-      <link>/tags/covid-19/</link>
+      <link>https://corona-stat.lt/tags/covid-19/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/covid-19/</guid>
+      <guid>https://corona-stat.lt/tags/covid-19/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Europa</title>
-      <link>/tags/europa/</link>
+      <link>https://corona-stat.lt/tags/europa/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/europa/</guid>
+      <guid>https://corona-stat.lt/tags/europa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>koronavirusas</title>
-      <link>/tags/koronavirusas/</link>
+      <link>https://corona-stat.lt/tags/koronavirusas/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/koronavirusas/</guid>
+      <guid>https://corona-stat.lt/tags/koronavirusas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lietuva</title>
-      <link>/tags/lietuva/</link>
+      <link>https://corona-stat.lt/tags/lietuva/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/lietuva/</guid>
+      <guid>https://corona-stat.lt/tags/lietuva/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pasaulis</title>
-      <link>/tags/pasaulis/</link>
+      <link>https://corona-stat.lt/tags/pasaulis/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/pasaulis/</guid>
+      <guid>https://corona-stat.lt/tags/pasaulis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>statisika</title>
-      <link>/tags/statisika/</link>
+      <link>https://corona-stat.lt/tags/statisika/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/statisika/</guid>
+      <guid>https://corona-stat.lt/tags/statisika/</guid>
       <description></description>
     </item>
     
     <item>
       <title>statistika</title>
-      <link>/tags/statistika/</link>
+      <link>https://corona-stat.lt/tags/statistika/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/tags/statistika/</guid>
+      <guid>https://corona-stat.lt/tags/statistika/</guid>
       <description></description>
     </item>
     
     <item>
       <title>index</title>
-      <link>/tags/index/</link>
+      <link>https://corona-stat.lt/tags/index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/index/</guid>
+      <guid>https://corona-stat.lt/tags/index/</guid>
       <description></description>
     </item>
     
