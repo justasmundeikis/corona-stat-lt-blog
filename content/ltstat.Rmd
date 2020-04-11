@@ -36,7 +36,7 @@ demo_r_pjangrp <- get_eurostat("demo_r_pjangrp3",
 
 Naujausiais duomenimis (`r format(Sys.time(), "%Y-%m-%d %H:%M")`) Lietuvoje šiuo metu yra:
         
-* iš viso registruotų atvejų - `r data_lt$conf_total[nrow(data_lt)]`
+* iš viso registruotų atvejų - `r data_lt$confirmed_total[nrow(data_lt)]`
 * iš jų pasveiko - `r data_lt$recovered_total[nrow(data_lt)] `
 * iš jų mirė - `r data_lt$deaths_total[nrow(data_lt)]`
 * likęs aktyvių atvejų  skaičius - `r data_lt$active_total[nrow(data_lt)] `
