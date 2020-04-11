@@ -3,14 +3,8 @@ library(eurostat)
 
 data_lt <- read.csv("./content/data/data_lt.csv",header = TRUE,stringsAsFactors = FALSE)%>%
         mutate(date=as.Date(date))
-
-data_lt_country <- read.csv("./content/data/data_lt_country.csv",header = TRUE,stringsAsFactors = FALSE)%>%
-        mutate(date=as.Date(date),
-               var=factor(var, levels=c("confirmed","active", "recovered", "deaths")))
-
 data_lv <- read.csv("./content/data/data_lv.csv",header = TRUE,stringsAsFactors = FALSE)%>%
         mutate(date=as.Date(date))
-
 data_ee <- read.csv("./content/data/data_ee.csv",header = TRUE,stringsAsFactors = FALSE)%>%
         mutate(date=as.Date(date))
 
@@ -52,9 +46,6 @@ df <- merge(lt,lv)%>% merge(.,ee) %>%
                geo=rep(c("Lietuva", "Latvija", "Estija"), each=nrow(lt), times=2))
 
 
-
-
-
 png("./static/post/2020-04-08-ar-butina-plesti-testavima_files/2020-04-08-tested-number.png", width = 7, height = 5, units = 'in', res = 100)
 ggplot(df, aes(date, values, col=geo))+
         geom_line(size=1.1)+
@@ -75,31 +66,27 @@ dev.off()
 
 
 #### second graph
+lt <- data_lt %>%
+        select(date, confirmed_new ,tested_new)%>%
+        rename(confirmed_new_lt=confirmed_new,
+               tested_new_lt=tested_new)
 
-lt_1 <- data_lt %>%
-        select(date, tested_new)%>%
-        rename(tested_new_lt=tested_new)
-
-lt_2 <- data_lt_country %>%
-        filter(var=="confirmed")%>%
-        select(date, values)%>%
-        rename(conf_new_lt=values)
 
 lv <- data_lv %>%
-        select(date, conf_new ,tested_new)%>%
-        rename(conf_new_lv=conf_new,
+        select(date, confirmed_new ,tested_new)%>%
+        rename(confirmed_new_lv=confirmed_new,
                tested_new_lv=tested_new)
 
 ee <- data_ee %>%
-        select(date,conf_new, tested_new)%>%
-        rename(conf_new_ee=conf_new,
+        select(date,confirmed_new, tested_new)%>%
+        rename(confirmed_new_ee=confirmed_new,
                tested_new_ee=tested_new)
 
-df <- merge(lt_1,lt_2) %>% merge(.,lv) %>% merge(.,ee)%>%
+df <- merge(lt,lv) %>% merge(.,ee)%>%
         mutate(
-                Lietuva=conf_new_lt/tested_new_lt*100,
-                Latvija=conf_new_lv/tested_new_lv*100,
-                Estija=conf_new_ee/tested_new_ee*100
+                Lietuva=confirmed_new_lt/tested_new_lt*100,
+                Latvija=confirmed_new_lv/tested_new_lv*100,
+                Estija=confirmed_new_ee/tested_new_ee*100
         )%>%
         select(1,8,9,10)%>%
         gather(geo, values, 2:4)

@@ -16,22 +16,6 @@ source("./scripts/data_import_GS.R")
 ```
 
 ```{r, include=FALSE}
-data_lt_country <- read.csv("./data/data_lt_country.csv",header = TRUE,stringsAsFactors = FALSE)%>%
-  mutate(date=as.Date(date),
-         var=factor(var, levels=c("confirmed","active", "recovered", "deaths")))
-
-data_lt_country_cum <- read.csv("./data/data_lt_country_cum.csv",header = TRUE,stringsAsFactors = FALSE)%>%
-  mutate(date=as.Date(date),
-         var=factor(var, levels=c("confirmed","active", "recovered", "deaths")))
-
-data_lt_county <- read.csv("./data/data_lt_county.csv",header = TRUE,stringsAsFactors = FALSE)%>%
-  mutate(date=as.Date(date),
-         var=factor(var, levels=c("confirmed","active", "recovered", "deaths")))
-
-data_lt_county_cum <- read.csv("./data/data_lt_county_cum.csv",header = TRUE,stringsAsFactors = FALSE)%>%
-  mutate(date=as.Date(date),
-         var=factor(var, levels=c("confirmed","active", "recovered", "deaths")))
-
 data_lt <- read.csv("./data/data_lt.csv",header = TRUE,stringsAsFactors = FALSE)%>%
   mutate(date=as.Date(date))
 
@@ -50,38 +34,28 @@ demo_r_pjangrp <- get_eurostat("demo_r_pjangrp3",
                pop=values)
 ```
 
-
-```{r}
-df <- data_lt_country_cum %>%
-        filter(date==max(date))%>%
-        spread(var, values)
-time_now <- format(Sys.time(), "%Y-%m-%d %H:%M")
-```
-
-Naujausiais duomenimis (`r time_now`) Lietuvoje šiuo metu yra:
+Naujausiais duomenimis (`r format(Sys.time(), "%Y-%m-%d %H:%M")`) Lietuvoje šiuo metu yra:
         
-* iš viso registruotų atvejų - `r df$confirmed `
-* iš jų pasveiko - `r df$recovered `
-* iš jų mirė - `r df$deaths`
-* likęs aktyvių atvejų  skaičius - `r df$active `
+* iš viso registruotų atvejų - `r data_lt$conf_total[nrow(data_lt)]`
+* iš jų pasveiko - `r data_lt$recovered_total[nrow(data_lt)] `
+* iš jų mirė - `r data_lt$deaths_total[nrow(data_lt)]`
+* likęs aktyvių atvejų  skaičius - `r data_lt$active_total[nrow(data_lt)] `
 
 ## Bendras atvejų skaičius
 ```{r, echo=FALSE}
 
-df <- data_lt_county_cum%>%
-        filter(var!="confirmed") %>%
-        mutate(var=factor(var, levels=c("active", "recovered", "deaths")))%>%
-        group_by(date, var)%>%
-        summarise(values=sum(values))
+df <- data_lt%>%
+  select(date, active_total, recovered_total, deaths_total)%>%
+  gather(var, values, 2:4)
 
 max.date <- max(df$date)
 
 ggplot(df, aes(x=date, y=values, fill=var))+
         geom_area(alpha=0.5)+
-        scale_fill_manual(values=c("red", "green", "black"),
-                          labels=c("Aktyvūs", "Pasveikę", "Mirę") )+
+        scale_fill_manual(values=c("red", "black", "green"),
+                          labels=c("Aktyvūs", "Mirę", "Pasveikę") )+
         scale_x_date(breaks="1 week")+
-        labs(title=paste0("Lietuvos koronaviruso atvejų skaičius ir pasiskirstymas (naujausi duomenys ", max.date, ")"),
+        labs(title=paste0("Koronaviruso atvejų skaičius ir pasiskirstymas (naujausi duomenys ", max.date, ")"),
              subtitle = "Šaltinis ir skaičiavimai: Corona-Stat.lt",
              x="Data",
              y="Skaičius")+
@@ -92,19 +66,13 @@ ggplot(df, aes(x=date, y=values, fill=var))+
 
 ## Naujų atvejų skaičius
 ```{r, echo=FALSE}
+max.date <- max(data_lt$date)
 
-df <- data_lt_country%>%
-        filter(var=="confirmed",
-               date>="2020-02-28")
-
-
-max.date <- max(df$date)
-
-ggplot(df, aes(x=date, y=values, fill=var))+
+ggplot(data_lt, aes(x=date, y=confirmed_new))+
         geom_bar( stat = "identity",
                   fill="steelblue")+
-        scale_x_date(breaks="1 day")+
-        geom_text(aes(label=values, y=values), size=2.5, vjust=-0.5)+
+        scale_x_date(breaks="1 week")+
+        geom_text(aes(label=confirmed_new, y=confirmed_new), size=2.5, vjust=-0.5)+
         labs(title=paste0("Naujų atvejų skaičius (naujausi duomenys ", max.date, ")"),
              subtitle = "Šaltinis ir skaičiavimai: Corona-Stat.lt",
              x="Data",
@@ -136,7 +104,7 @@ ee <- data_ee %>%
         select(date, tested_total)%>%
         rename(tested_total_ee=tested_total)
 
-df <- merge(lt,lv)%>% merge(.,ee) %>%
+df <- merge(lt,lv)%>% merge(.,ee)%>%
         mutate(
                 tested_total_lt_p=tested_total_lt/pop$LT*1000,
                 tested_total_lv_p=tested_total_lv/pop$LV*1000,
@@ -166,30 +134,27 @@ ggplot(df, aes(date, values, col=geo))+
 ## Atvejai / ištyrimai (cum)
 
 ```{r}
-lt_1 <- data_lt %>%
-        select(date, tested_total)%>%
-        rename(tested_total_lt=tested_total)
+lt <- data_lt %>%
+        select(date, confirmed_total ,tested_total)%>%
+        rename(confirmed_total_lt=confirmed_total,
+               tested_total_lt=tested_total)
 
-lt_2 <- data_lt_country_cum %>%
-        filter(var=="confirmed")%>%
-        select(date, values)%>%
-        rename(conf_total_lt=values)
 
 lv <- data_lv %>%
-        select(date, conf_total ,tested_total)%>%
-        rename(conf_total_lv=conf_total,
+        select(date, confirmed_total ,tested_total)%>%
+        rename(confirmed_total_lv=confirmed_total,
                tested_total_lv=tested_total)
 
 ee <- data_ee %>%
-        select(date,conf_total, tested_total)%>%
-        rename(conf_total_ee=conf_total,
+        select(date,confirmed_total, tested_total)%>%
+        rename(confirmed_total_ee=confirmed_total,
                tested_total_ee=tested_total)
 
-df <- merge(lt_1,lt_2) %>% merge(.,lv) %>% merge(.,ee)%>%
+df <-merge(lt,lv) %>% merge(.,ee)%>%
         mutate(
-                Lietuva=conf_total_lt/tested_total_lt*100,
-                Latvija=conf_total_lv/tested_total_lv*100,
-                Estija=conf_total_ee/tested_total_ee*100
+                Lietuva=confirmed_total_lt/tested_total_lt*100,
+                Latvija=confirmed_total_lv/tested_total_lv*100,
+                Estija=confirmed_total_ee/tested_total_ee*100
         )%>%
         select(1,8,9,10)%>%
         gather(geo, values, 2:4)
@@ -217,30 +182,27 @@ ggplot(df, aes(date, values, col=geo))+
 ## Atvejai / ištyrimai
 
 ```{r}
-lt_1 <- data_lt %>%
-        select(date, tested_new)%>%
-        rename(tested_new_lt=tested_new)
+lt <- data_lt %>%
+        select(date, confirmed_new ,tested_new)%>%
+        rename(confirmed_new_lt=confirmed_new,
+               tested_new_lt=tested_new)
 
-lt_2 <- data_lt_country %>%
-        filter(var=="confirmed")%>%
-        select(date, values)%>%
-        rename(conf_new_lt=values)
 
 lv <- data_lv %>%
-        select(date, conf_new ,tested_new)%>%
-        rename(conf_new_lv=conf_new,
+        select(date, confirmed_new ,tested_new)%>%
+        rename(confirmed_new_lv=confirmed_new,
                tested_new_lv=tested_new)
 
 ee <- data_ee %>%
-        select(date,conf_new, tested_new)%>%
-        rename(conf_new_ee=conf_new,
+        select(date,confirmed_new, tested_new)%>%
+        rename(confirmed_new_ee=confirmed_new,
                tested_new_ee=tested_new)
 
-df <- merge(lt_1,lt_2) %>% merge(.,lv) %>% merge(.,ee)%>%
+df <- merge(lt,lv) %>% merge(.,ee)%>%
         mutate(
-                Lietuva=conf_new_lt/tested_new_lt*100,
-                Latvija=conf_new_lv/tested_new_lv*100,
-                Estija=conf_new_ee/tested_new_ee*100
+                Lietuva=confirmed_new_lt/tested_new_lt*100,
+                Latvija=confirmed_new_lv/tested_new_lv*100,
+                Estija=confirmed_new_ee/tested_new_ee*100
         )%>%
         select(1,8,9,10)%>%
         gather(geo, values, 2:4)
