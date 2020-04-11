@@ -80,7 +80,7 @@ ggplot(df, aes(x=date, y=values, fill=var))+
         geom_area(alpha=0.5)+
         scale_fill_manual(values=c("red", "green", "black"),
                           labels=c("Aktyvūs", "Pasveikę", "Mirę") )+
-        scale_x_date(breaks="1 day")+
+        scale_x_date(breaks="1 week")+
         labs(title=paste0("Lietuvos koronaviruso atvejų skaičius ir pasiskirstymas (naujausi duomenys ", max.date, ")"),
              subtitle = "Šaltinis ir skaičiavimai: Corona-Stat.lt",
              x="Data",
@@ -156,7 +156,7 @@ ggplot(df, aes(date, values, col=geo))+
                 x="Laikotarpis",
                 y="Skaičius"
         )+
-        scale_x_date(breaks = "2 day")+
+        scale_x_date(breaks = "1 week")+
         theme(legend.position = "bottom",
               axis.text=element_text(size=8),
               axis.text.x=element_text(angle=45, hjust=1))+
@@ -204,7 +204,7 @@ ggplot(df, aes(date, values, col=geo))+
                 x="Laikotarpis",
                 y="Santykis"
         )+
-        scale_x_date(breaks = "2 day")+
+        scale_x_date(breaks = "1 week")+
         theme(legend.position = "bottom",
               axis.text=element_text(size=8),
               axis.text.x=element_text(angle=45, hjust=1))
@@ -256,7 +256,7 @@ ggplot(df, aes(date, values, col=geo))+
                 x="Laikotarpis",
                 y="Santykis"
         )+
-        scale_x_date(breaks = "2 day")+
+        scale_x_date(breaks = "1 week")+
         theme(legend.position = "bottom",
               axis.text=element_text(size=8),
               axis.text.x=element_text(angle=45, hjust=1))
