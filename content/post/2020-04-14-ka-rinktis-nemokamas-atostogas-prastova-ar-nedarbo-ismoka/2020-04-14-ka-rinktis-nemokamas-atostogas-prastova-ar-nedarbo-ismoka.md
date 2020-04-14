@@ -3,6 +3,7 @@ title: Ką rinktis – nemokamas atostogas, prastovą ar nedarbo išmoką?
 slug: ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka
 authors:
   - Arminte Globyte
+  - Justas Mundeikis
 date: "2020-04-14"
 description: 
 images: [photo_money.jpg]
@@ -42,7 +43,7 @@ Darbdaviai galės rinktis iš šių dviejų variantų:
 
 Žemiau pateiktoje lentelėje žaliai pažymėta, kurį variantą darbdaviui labiau apsimoka pasirinkti, priklausomai nuo to, koks prastovos dydis (bruto atlyginimas) sutariamas su darbuotoju.
 
-![](/post/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka_files/lentele1.png)
+![](/post/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka_files/lentele1.png)
 
 Siekiant sumažinti prastovos kaštus, darbdaviams labiausiai apsimoka:
 * kai prastovos dydis mažesnis nei 867 EUR  - pasirenkti 90 proc. subsidiją
@@ -65,10 +66,10 @@ Darbuotojas, kurio darbdavys nori jam skelbti prastovą, arba dar blogiau, bando
 Žaliai nuspalvinta, ar prastova ar nedarbo išmoka yra didesnė, atsižvelgiant į darbo užmokestį.
 
 #### Prastova 1 MMA:
-![](/post/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka_files/lentele3.png)
+![](/post/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka_files/lentele3.png)
 
 #### Prastova 1.5 MMA:
-![](/post/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka_files/lentele4.png)
+![](/post/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka_files/lentele4.png)
 
 Išvados:
 
