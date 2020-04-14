@@ -1,8 +1,8 @@
 {
-    "path" : "~/D/projects/corona-stat-lt-blog/content/post",
+    "path" : "~/D/projects/corona-stat-lt-blog/content/authors/arminte-globyte",
     "sortOrder" : [
         {
-            "ascending" : true,
+            "ascending" : false,
             "columnIndex" : 2
         }
     ]

@@ -45,6 +45,7 @@ Darbdaviai galės rinktis iš šių dviejų variantų:
 ![](/post/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka_files/lentele1.png)
 
 Siekiant sumažinti prastovos kaštus, darbdaviams labiausiai apsimoka:
+
 * kai prastovos dydis mažesnis nei 867 EUR  - pasirenkti 90 proc. subsidiją
 * kai prastovos dydis didesnis nei 867 EUR - pasirinkti 70 proc. subsidiją
 
