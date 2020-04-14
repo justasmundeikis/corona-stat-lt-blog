@@ -73,7 +73,7 @@ Darbuotojas, kurio darbdavys nori jam skelbti prastovą, arba dar blogiau, bando
 Išvados:
 
 1. Jei asmuo uždirbdavo MMA, jam labiau apsimoka rinktis prastovą, nes nedarbo išmoka bus mažesnė, o prastova  negali būti mažesnė nei MMA.
-2. Kai uždirbama mažiau nei  855 EUR „ant popieriaus“, o prastova lygi 1 MMA, labiau apsimoka rinktis prastovą.
+2. Kai uždirbama mažiau nei 762 EUR „ant popieriaus“, o prastova lygi 1 MMA, labiau apsimoka rinktis prastovą.
 3. Kai uždirbama mažiau nei  1211 EUR „ant popieriaus“, o prastova lygi 1.5 MMA, labiau apsimoka rinktis prastovą.
 4. Nedarbo išmokos lubos, jei bedarbis užsiregistravo Užimtumo tarnyboje 2020 m. II ketvirtį, pasiekiamos, kai darbo užmokestis „ant popieriaus“ yra 1655 EUR. 
 
