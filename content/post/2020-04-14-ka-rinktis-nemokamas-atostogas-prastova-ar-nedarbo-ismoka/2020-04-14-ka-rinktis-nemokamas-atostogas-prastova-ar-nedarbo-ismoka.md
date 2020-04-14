@@ -52,7 +52,7 @@ Siekiant sumažinti prastovos kaštus, darbdaviams labiausiai apsimoka:
 
 Jei asmuo neteko ar išėjo iš darbo ir yra užregistruotas Užimtumo tarnyboje, jis gali gauti nedarbo išmoką. Nedarbo išmoką sudaro dvi dalys - pastovi ir kintama. Pastovi nedarbo išmokos dalis lygi 141,25 EUR, o kintama dalis priklauso nuo darbuotojo turėtų pajamų per paskutinius 30 mėnesių ir skiriasi pagal mokėjimo mėnesį:
 
-![](/post/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka_files/lentele2.jpeg)
+![](/post/2020-04-14-ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka_files/lentele2.png)
 
 > Pvz.: Jeigu darbuotojas gaudavo 607 EUR „ant popieriaus“, nedarbo išmoka pirmus tris mėnesius bus lygi 141,25+(607*0.3879)=376.71 EUR
 
