@@ -2,8 +2,7 @@
 title: Ką rinktis – nemokamas atostogas, prastovą ar nedarbo išmoką?
 slug: ka-rinktis-nemokamas-atostogas-prastova-ar-nedarbo-ismoka
 authors:
-  - Arminte Globyte
-  - Justas Mundeikis
+ - Arminte Globyte
 date: "2020-04-14"
 description: 
 images: [photo_money.jpg]
