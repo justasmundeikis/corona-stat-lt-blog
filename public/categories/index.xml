@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Corona-Stat.lt</title>
-    <link>https://corona-stat.lt/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Corona-Stat.lt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="https://corona-stat.lt/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Europa</title>
-      <link>https://corona-stat.lt/categories/europa/</link>
+      <link>/categories/europa/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>https://corona-stat.lt/categories/europa/</guid>
+      <guid>/categories/europa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lietuva</title>
-      <link>https://corona-stat.lt/categories/lietuva/</link>
+      <link>/categories/lietuva/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>https://corona-stat.lt/categories/lietuva/</guid>
+      <guid>/categories/lietuva/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pasaulis</title>
-      <link>https://corona-stat.lt/categories/pasaulis/</link>
+      <link>/categories/pasaulis/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>https://corona-stat.lt/categories/pasaulis/</guid>
+      <guid>/categories/pasaulis/</guid>
       <description></description>
     </item>
     
