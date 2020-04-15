@@ -1,11 +1,12 @@
 ---
 images:
-- foto2.jpg
+- foto1.png
 name: Tomas Dzedulionis
 ---
-  
-Ekonomikos studentas Vilniaus Universitetete.  
-  
-**Kontaktai:**  
-Tel.nr.: +37065799778  
-E-mail: tomas.dzedulionis@gmail.com
+Tomas nuo 2018 metų studijuoja ekonomiką Vilniaus universitete.
+Ekonomikos analitiką domininčios temos:
+
+* Pramonė
+* Paslaugos
+* Vartotojų ir verslo lūkesčiai
+* Duomenų analitika

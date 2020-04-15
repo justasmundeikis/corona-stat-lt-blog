@@ -4,7 +4,9 @@ images:
 name: Armintė Globytė
 ---
 
-Armintė nuo 2018 metų studijuoja ekonomiką Vilniaus universitete. 
-Analitkę domininčios temos:
+Nuo 2018 metų studijuoja ekonomiką Vilniaus universitete.
+Ekonomikos analitikę domininčios temos:
 
-* darbo rinka
+* Darbo rinka
+* Makroekonomika
+* Duomenų analitika
