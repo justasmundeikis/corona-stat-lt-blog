@@ -1,6 +1,6 @@
 ---
 images:
-- foto1.png
+- rsz.jpg
 name: Tomas Dzedulionis
 ---
 Tomas nuo 2018 metų studijuoja ekonomiką Vilniaus universitete.

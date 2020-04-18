@@ -5,7 +5,7 @@ authors:
  - Tomas Dzedulionis
 date: "2020-04-19"
 description: 
-images: [photo_money.jpg]
+images: [lukesciai.jpg]
 tags:
 - PMI indeksas
 - Verslo lūkesčiai
