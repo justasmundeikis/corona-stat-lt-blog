@@ -13,14 +13,14 @@ tags:
 - BVP
 ---
 
-**Koronaviruso pandemija privertė daugelį šalių reaguoti griežtomis priemonėmis - ribojant fizinį (socialinį) kontaktą buvo siekiama mažinti spartaus viruso plitimo tikimybę. Uždarytos parduotuvės, paslaugos, atšaukti renginiai bei kelionės atsilieps Lietuvos ekonomikai ne tik tiesiogiai, bet ir per sumažėjusią užsienio paklausą prekėms ir paslaugoms Lietuvos eksporto rinkose. Šiuo metu, kai dar nėra pakankamai patikimų statistinių duomenų, verslo lūkesčių rodikliai  tampa pirmąja kregžde, nusakančia ko galima tikėtis. Tad šiame komentare apie verlso lūkesčius pagrindinėse Lietuvos eksporto rinkose.**<--!more-->
+**Koronaviruso pandemija privertė daugelį šalių reaguoti griežtomis priemonėmis - ribojant fizinį (socialinį) kontaktą buvo siekiama mažinti spartaus viruso plitimo tikimybę. Uždarytos parduotuvės, paslaugos, atšaukti renginiai bei kelionės atsilieps Lietuvos ekonomikai ne tik tiesiogiai, bet ir per sumažėjusią užsienio paklausą prekėms ir paslaugoms Lietuvos eksporto rinkose. Šiuo metu, kai dar nėra pakankamai patikimų statistinių duomenų, verslo lūkesčių rodikliai tampa pirmaisiais duomenimis, nusakančiais ko galima tikėtis. Tad šiame komentare apie verlso lūkesčius pagrindinėse Lietuvos eksporto rinkose.**<!--more-->
 
 # Įvadas
 
 
-Lietuvoje, palyginus su kitomis ES šalimis, COVID19 viruso paplitimas buvo ganėtinai ribotas. Vertinant žinomų užsikrėtimų skaičių tenkantį 100.000 gyventojų - Lietuva yra 25-oje vietoje tarp ES šalių.
+Lietuvoje, palyginus su kitomis ES šalimis, COVID19 viruso paplitimas buvo ganėtinai ribotas. Vertinant žinomų užsikrėtimų skaičių tenkantį 100.000 gyventojų - Lietuva yra 26-oje vietoje tarp ES šalių.
 
-![bar chart infections /pop]() 
+![1-as grafikas](/post/2020-04-18-verslo-lukesciai-uzsienio-rinkose/uzsikretimai.png) 
 
 Lietuvoje, kaip ir kitose šalyse, politikai kartu su epidemiologais ir ekonomistais bando rasti kompromisą - kaip išsaugoti gyvybes, bet nesunaikinti ekonomikos, tad beveik mėnesio trukusio griežto karantino sąlygos pradedamos lengvinti daugelyje šalių. Netrukus pradės veikti parduotuvės, tam tikros paslaugos. Nepaisant to, šokas ekonomikai buvo labai stiprus. Tarptautinės institucijos (TVF, OECD, Pasaulio bankas), Europos komisija bei politikai ne retai rinkosi griežtą retoriką ir viruso plitimą net prilygino “karui”. Karantinas, verslų uždarymai privertė politikus imtis ambicingų ekonomikos skatinimų priemonių, tačiau nepaisant to, panašu, jog daugelyje šalių recesijos išvengti nepavyks. Atsižvelgiant į tai, jog Lietuvos ekonomika yra maža ir atvira, t.y. orientuota į užsienio prekybą šalis  ir siekiant geriau nuspėti, ko galima tikėtis lietuvos eksportuotojams, reikia stebėti lietuvos eksporto rinkų raidą. Deja, dauguma statistinių rodiklių, tokių kaip mažmeninė apyvarta, pramonės produkcija, bendrojo vidaus produkto (BVP) pirmi įverčiai vėluoja  apie porą mėnesių. Siekiant matyti situaciją čia ir dabar ar ją bent aproksimuoti, gali būti prasminga analizuoti verslo lūkesčių rodiklius. Šiame analitiniame komentare apie Lietuvos ekonomikos atvirumą, apie vieną dažniausiai naudojamų verslo lūkesčio indeksų - PMI bei šio rodiklio reikšmes keliose pagrindinėse Lietuvos eksporto rinkose.
 
@@ -33,9 +33,9 @@ Ekonominis valstybių atvirumas skaičiuojamas kaip santykis tarp eksportuotų i
 Iš vienos pusės, ekonomikos atvirumas ir laisva prekyba didina visuomenės ekonominę gerovę, o ypač tada, kai prekybos balansas yra teigiamas t.y. eksportuojama daugiau prekių ir paslaugų nei importuojama (Lietuva 2019 metais eksportavo 5 proc. daugiau prekių ir paslaugų nei jų importavo). Eksportas didesnis nei importas reiškia, jog šalis pagamino prekių ir pardavė paslaugų daugiau, nei pati jų suvartojo, taigi uždirbo daugiau pinigų, tad šalies ekonominė gerovė iš esmės gali didėti (ar iš tiesų gerėja dar priklauso nuo to, kaip uždirbtos pajamos pasiskirsto, t.y. nuo pajamų nelygybės, kuri Lietuvoje deja yra viena didžiausių ES).
 
 
-![gini index of working age population]()
+![3-ias grafikas](/post/2020-04-18-verslo-lukesciai-uzsienio-rinkose/income.png)
 
-Iš kitos, pusės atvira ekonomikos struktūra byloja apie didelį pažeidžiamumą ir priklausomybę nuo prekybos partnerių. Nuo eksportuojamų prekių paklausos priklauso pramonės gamyba, planuojamos ir vykdomos investicijos, užimtumo lygis bei atlyginimai.  Jei eksporto rinkose ilgą laikotarpį ir reikšmingai sumažėja paklausa - gamintojai bei jų subtiekėjai susiduria su sunkumais ir yra priversti gaminamą produkciją kaupti sandėliuose, o paklausos šokui užsitęsus ilgiau, netgi mažinti gamybos apimtis bei atitinkamai mažinti darbo kaštus - arba išleisdami darbuotojus į laikiną prastovą, [mažindami atlyginimus](https://www.vz.lt/transportas-logistika/2020/04/17/vezejai-mazina-dienpinigius-girteka-logistics-vairuotojai-grasina-streiku) ,arba, jeigu paklausos šokas yra ilgalaikis, [atleisdami darbuotojus iš darbo](https://www.vz.lt/verslo-valdymas/2020/04/18/nauja-praktika-atleisti-nuotoliniu-budu-galima-per-2-minutes). Toks darbuotojų disponuojamų pajamų sumažėjimas ilgainiui mažina gyventojų galimybės vartoti, nuo ko nukenčia ir į vidaus vartojimą orientuotas verslas. Užsisuka recesijos spiralė. Siekiant įvertinti, kiek reali situacija, jog Lietuvoje būtų pasiekta tokia recesijos spiralė, būtina įsivertinti, iš kurių Lietuvos eksporto rinkų galima tikėtis ilgalaikio paklausos šoko.
+Iš kitos pusės atvira ekonomikos struktūra byloja apie didelį pažeidžiamumą ir priklausomybę nuo prekybos partnerių. Nuo eksportuojamų prekių paklausos priklauso pramonės gamyba, planuojamos ir vykdomos investicijos, užimtumo lygis bei atlyginimai.  Jei eksporto rinkose ilgą laikotarpį ir reikšmingai sumažėja paklausa - gamintojai bei jų subtiekėjai susiduria su sunkumais ir yra priversti gaminamą produkciją kaupti sandėliuose, o paklausos šokui užsitęsus ilgiau, netgi mažinti gamybos apimtis bei atitinkamai mažinti darbo kaštus - arba išleisdami darbuotojus į laikiną prastovą, [mažindami atlyginimus](https://www.vz.lt/transportas-logistika/2020/04/17/vezejai-mazina-dienpinigius-girteka-logistics-vairuotojai-grasina-streiku) ,arba, jeigu paklausos šokas yra ilgalaikis, [atleisdami darbuotojus iš darbo](https://www.vz.lt/verslo-valdymas/2020/04/18/nauja-praktika-atleisti-nuotoliniu-budu-galima-per-2-minutes). Toks darbuotojų disponuojamų pajamų sumažėjimas ilgainiui mažina gyventojų galimybės vartoti, nuo ko nukenčia ir į vidaus vartojimą orientuotas verslas. Užsisuka recesijos spiralė. Siekiant įvertinti, kiek reali situacija, jog Lietuvoje būtų pasiekta tokia recesijos spiralė, būtina įsivertinti, iš kurių Lietuvos eksporto rinkų galima tikėtis ilgalaikio paklausos šoko.
 
 # Lietuvos eksporto rinkos
 
@@ -100,7 +100,7 @@ Prasidėjus COVID-19 plitimui Europoje, verslo lūkesčiai Vokietijoje dar labia
 Tuo tarpu paslaugų sektorių, atsakingą už 70% Vokietijos BVP, tiesioginiai valdžios sprendimai dėl karantino paveikė gerokai greičiau ir stipriau - paslaugų PMI nukrito 20.8 punktų nuo 52.5 iki 31.7 bei pasiekė žemiausią tašką istorijoje. 
 Bendras PMI indeksas atitinkamai nukrito 15.7 punktų nuo 51.2 iki 35. 
 
-Šalyje sustojus ekonomikai buvo atlaisvinti fiskalinės drausmės susitarimai bei paskelbta apie beveik 22% (750 milijardų eurų) viso Vokietijos BVP sudarantį fiskalinio stimulo paketą. [Mažėjant naujų užsikrėtimų skaičiui, pastaruoju metu pradėta kalbėti apie karantino švelninimą](https://www.politico.eu/article/angela-merkel-sets-out-plan-to-reopen-germany-from-coronavirus-lockdown/), tačiau nepaisant pradedamų švelninti karantino sąlygų, galima tikėtis, jog koronaviruso šoko padariniai vidinei bei išorinei paklausai ir atitinkamai gamybai bus jaučiami visus metus, todė neigiamos pasekmės bus jaučiamos ir Lietuvoje.
+Šalyje sustojus ekonomikai buvo atlaisvinti fiskalinės drausmės susitarimai bei paskelbta apie beveik 30% (750 milijardų eurų) viso Vokietijos BVP sudarantį fiskalinio stimulo ir socialinių garantijų paketą. [Mažėjant naujų užsikrėtimų skaičiui, pastaruoju metu pradėta kalbėti apie karantino švelninimą](https://www.politico.eu/article/angela-merkel-sets-out-plan-to-reopen-germany-from-coronavirus-lockdown/), tačiau nepaisant pradedamų švelninti karantino sąlygų, galima tikėtis, jog koronaviruso šoko padariniai vidinei bei išorinei paklausai ir atitinkamai gamybai bus jaučiami visus metus, todė neigiamos pasekmės bus jaučiamos ir Lietuvoje.
 
 ![5-as grafikas](/post/2020-04-18-verslo-lukesciai-uzsienio-rinkose/Vokietija.png)
 
@@ -118,7 +118,7 @@ Praėjusiais metais lėtėjant ekonomikai, PMI indeksai judėjo ta pačia krypti
 
 Švedijos vyriausybė, priešingai nei kaimyninės valstybės, nusprendė priimti švelnesnę koronaviruso pandemijos valdymo strategiją - nedraudžia, tačiau ragina piliečius vengti masinių susibūrimų ir dirbti iš namų, o parduotuvės ir barai veiklos apribojimų nesulaukė. Tokia valstybės priimta politika susilaukė daug kritikos, tačiau vyriausybė skelbia tikinti savo piliečių sąmoningumų ir kol kas draudimų nepriima. Ši valstybės priimta strategija, nuo 7.6% iki 13.4% Švedijos BVP dydžio fiskalinių išlaidų paketas bei socialinės valstybės garantijos verslui ir darbuotojams atitinkamai lemia tai, jog Švedijos ekonomika, palyginus su kitomis valstybėmis, tikėtina, patirs mažesnę recesiją, tačiau Švedijos eksporto rinkose besitęsiant karantinui vidinė paklausa nesugebės išlaikyti viso ekonomikos variklio, o mažėjanti išorinė paklausa anksčiau ar vėliau atsilieps ir vidiniam vartojimui.
 
-Didelė dalis Lietuvos ir Švedijos prekybinių ryšių yra sujungti su viena iš stambiausių Švedijos įmonių - IKEA, kuri uždarė savo parduotuves visame pasaulyje dėl ko Lietuvos baldų gamintojai nebeturi užsakymų. Viena iš didžiausių Baltijos šalyse baldų gamybos ir medienos apdirbimo grupių Vakarų Medienos Grupė stabdo savo veiklą ir, kaip [Delfi „Dėmesio centre“](https://www.delfi.lt/video/laidos/delfi-demesio-centre/delfi-demesio-centre-koronakrizes-issukis-verslui-kaip-realiai-veikia-valdzios-parama-ir-ka-artimiausiu-metu-planuoja-patys-verslininkai.d?id=83998653) praneša valdybos pirmininkas S.Paulauskas, dėl IKEA parduotuvių uždarymo VMG neteko apie 80 proc. užsakymų ir naujos gamybos nebevykdo. Panaši situacija ir kitose tiek didžiosiose, tiek mažesnėse baldų gamybos ir medienos apdirbimo įmonėse. 
+Didelė dalis Lietuvos ir Švedijos prekybinių ryšių yra sujungti su viena iš stambiausių Švedijos įmonių - IKEA, kuri uždarė savo parduotuves visame pasaulyje dėl ko Lietuvos baldų gamintojai nebeturi užsakymų. Viena iš didžiausių Baltijos šalyse baldų gamybos ir medienos apdirbimo grupių Vakarų Medienos Grupė stabdo savo veiklą ir, kaip [Delfi „Dėmesio centre“](https://www.delfi.lt/video/laidos/delfi-demesio-centre/delfi-demesio-centre-koronakrizes-issukis-verslui-kaip-realiai-veikia-valdzios-parama-ir-ka-artimiausiu-metu-planuoja-patys-verslininkai.d?id=83998653) praneša valdybos pirmininkas S.Paulauskas, dėl IKEA parduotuvių uždarymo VMG neteko apie 80 proc. užsakymų ir naujos gamybos nebevykdo. Panaši situacija ir kitose tiek didžiosiose, tiek mažesnėse baldų gamybos ir medienos apdirbimo įmonėse. Bendra Lietuvos ekonomika taip pat nukentės ir dėl mažėjančių tiesioginių Švedijos, kaip didžiausios investuotojos Lietuvoje, investicijų smukimo.
 
 
 ![7-as grafikas](/post/2020-04-18-verslo-lukesciai-uzsienio-rinkose/Svedija.png)
@@ -137,7 +137,9 @@ Pandemija koregavo ir iki tol ganėtinai pozityvius paslaugų sektoriaus, sudara
 
 Bendras PMI krito 8.7 punkto nuo 49.6 iki 40.9, o tai indikuoja apie vis gilėjantį šalies verslo susitraukimą.
 
-JAV Vyriausybė kovai su virusu skyrė iki šiol neregėto dydžio - 10% BVP (2.2 trilijonų JAV dolerių) dydžio fiskalinio stimulo paketą. Federalinio rezervo bankas pradėjo kiekybinį skatinimą - sumažino bazinę palūkanų normą ir paskelbė 700 milijardų dolerių dydžio vertybinių popierių pirkimą. Nors balandžio mėnesio PMI rodikliai dar nerodo didelio pramonės kritimo, tačiau vertinant bendrą situaciją šalyje aišku, jog tai tik laiko klausimas.
+JAV Vyriausybė kovai su virusu skyrė iki šiol neregėto dydžio - 10% BVP (2.2 trilijonų JAV dolerių) dydžio fiskalinio stimulo paketą. Federalinio rezervo bankas pradėjo kiekybinį skatinimą - sumažino bazinę palūkanų normą ir paskelbė 700 milijardų dolerių dydžio vertybinių popierių pirkimą. Nors balandžio mėnesio PMI rodikliai dar nerodo didelio pramonės kritimo, tačiau vertinant bendrą situaciją šalyje aišku, jog tai tik laiko klausimas. 
+
+
 
 ![9-as grafikas](/post/2020-04-18-verslo-lukesciai-uzsienio-rinkose/JAV.png)
 
@@ -160,12 +162,15 @@ Paslaugų sektorius sureagavo greičiau - paskutiniais duomenimis PMI krito nuo 
 
 Bendras PMI fiksavo 17 punktų kritimą nuo 53 iki 36.
 
-
-## Išvados
-
-## Epilogas
+Mažesnė gamyba ir vidinė paklausa atsilieps ir Lietuvos ekonomikai, kuri poveikį pajus ne tik dėl pagrindinių prekių eksporto mažėjimo, tačiau ir dėl kito svarbaus veiksnio - Lietuvos emigrantų piniginių perlaidų į Lietuvą sumažėjimo. 
 
 
+# Epilogas
 
+Verslo lūkesčiai užsienio rinkose aiškiai signalizuoja, jog virusas ekonomikai kirto skaudžiai, o pasekmės bus jaučiamos ilgai. Situacija pagrindinėse eksporto rinkose rodo žymų paklausos kritimą. Didžioji ekonomikos dalis - paslaugų sektorius - visoje Europoje sustojo ir nors pramonė kovo mėnesį dar laikėsi, tačiau aišku, jog gilėjanti krizė ir paklausos mažėjimas artimiausiu metu skaudžiai palies ir gamybą. 
+
+Gegužės mėnesį besitęsiant visuotiniam karantinui, matysime vis gilėjančią krizę, o nuotaikos nesikeičiant Eurozonos BVP antrąjį ketvirtį, palyginus su tuo pačiu ketvirčiu prieš metus, [gali trauktis ir iki -5.6%](https://cdn.ihsmarkit.com/www/pdf/0420/Week-Ahead-20-04-17.pdf), kas reikštų dvigubai gilesnį recesijos piką, nei 2008-2009m. finansinės krizės metu. Lietuvai tarptautinės prekybos smukimas turės stiprų poveikį, jau dabar matome dėl sumažėjusios užsienio paklausos veiklos nebevykdančias įmones, tai atitinkamai atsilieps ir vidaus vartojimui, o tolimesnė krizė užsienio rinkose prisidės ir prie sumažėjusių tiesioginių užsienio investicijų bei piniginių perlaidų. Europos sąjungos realiajam BVP 2020m susitraukus 1%, [Lietuvos eksportas nukentėtų apie 1.5mlrd eurų](https://www.verslilietuva.lt/wp-content/uploads/2020/03/2020.03.23_PROGNOZE_COVID_final.pdf), kas sudaro apie 3% Lietuvos BVP. Gilesnės krizės atveju ES ekonomikai susitraukus 5-6%, Lietuva patirtų apie 11.2% BVP (5.4 mlrd eurų) siekančius nuostolius. 
+
+Atsakymas į klausimą ar pavyks išvengti recesijos spiralės artimiausiu laiku nepaaiškės, tačiau lėtejanti viruso plitimo dinamika atneša svarbių sprendimų laiką - ar bandyti vis sparčiau švelninti ribojimus taip gelbėjant ekonomiką, bet rizikuojant antru viruso protrūkių, ar vis dėlto pasirinkti mediciniškai saugesnį, bet ekonomiškai skaudesnį planą. Pastarosios naujienos rodo, jog Europa pradeda rinktis pirmąjį kelią, tačiau pilno atsigavimo ir senų vartojimo įpročių grįžimo dar teks palaukti. Būtina suprasti, jog globalizacija atskirų valstybių ekonomikas sujungė į vieną darinį, todėl neverta galvoti, jog Lietuvos ekonomiką išgelbės tik kuo greitesnis karantino sąlygų panaikinimas šalies viduje.
 
 
