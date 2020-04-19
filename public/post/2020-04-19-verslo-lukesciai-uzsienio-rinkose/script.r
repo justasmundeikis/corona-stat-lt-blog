@@ -177,7 +177,43 @@ ukcom$Date <- as.Date(ukcom$Date, format="%Y-%m-%d")
 ukcom$Date <- ukcom$Date %m+% months(-1)
 
 
+# Uzsikretimai
+
+data_world <- read.csv("./content/data/data_world.csv", header=TRUE, stringsAsFactors = FALSE, encoding="UTF-8")
+max.date<-max(data_world$date)
+pop <- get_eurostat("tps00001") %>% 
+        filter(time=="2019-01-01")%>%
+        rename(CNTR_CODE=geo,
+               pop=values)%>%
+        select(CNTR_CODE, pop)
+data_world <- data_world %>%
+        filter(var=="confirmed",
+               CNTR_CODE %in% c("BE","BG","CZ","DK","DE","EE","IE","EL","ES","FR","HR","IT","CY","LV","LT","LU","HU","MT","NL","AT","PL","PT","RO","SI","SK","FI","SE","UK","IS","LI","NO","CH"),
+               date==max(date))%>%
+        select (valstybe, value, CNTR_CODE)%>%
+        left_join(., pop, by="CNTR_CODE")%>%
+        mutate(value=round((value/pop*100000),1))%>%
+        select(valstybe, value)
+
 ## Grafikai
+
+## Uzsikretimau EU
+png("./static/post/2020-04-18-verslo-lukesciai-uzsienio-rinkose/uzsikretimai.png", width = 10, height = 6, units = 'in', res = 100)                       
+Sys.setlocale("LC_ALL","Lithuanian")
+ggplot(data_world,aes(x=reorder(valstybe,-value), y=value)) +
+        geom_bar(stat='identity',
+                 fill="steelblue")+
+        theme_stata()+
+        geom_text(aes(label=value, y=value), size=3, vjust=-0.75)+
+        labs(x="Valstybė", 
+             y="Užsikrėtimų skaičius", 
+             title=paste0("Užsikrėtimų skaičius 100.000 gyventojų ( ", max.date, " duomenimis)"),
+             subtitle="Šaltinis: JHCSSE, Skaičiavimai: Corona-Stat.lt" )+
+        theme(legend.title=element_blank(),
+              legend.position='none',
+              axis.text.x=element_text(angle=45, hjust=1))
+dev.off()
+
 
 
 ## nelygybe
@@ -264,12 +300,12 @@ Sys.setlocale("LC_ALL", "Lithuanian")
 par(mfrow=c(2,1),oma = c(0, 0, 0, 2),xpd="NA")
 plot(german$Date, german$PMI, type="l", lwd=3, col="black", ylab="PMI", xlab="Metai",  
      main="PMI Vokietijoje 2008-2020m.", ylim=c(32.5,65))
-abline(h=50, untf = FALSE, lty=3)
+abline(h=50, untf = FALSE, lty=3, xpd=FALSE)
 lines(germser$Date, germser$PMI, type="l", lwd=3, col="grey")
 lines(germcom$Date, germcom$PMI,type="l", lwd=3, col="steelblue")
 plot( gdp$time, gdp$DE, type="l", lwd=3, col="black",
       main="BVP Vokietijoje 2008-2020m.", sub="Duomenų šaltiniai: IHS Markit, Eurostat, skaičiavimai: Corona-stat.lt", xlab="Metai", ylab="BVP augimas, %", xlim=c(2008,2019.5))
-abline(h=0, untf=FALSE, lty=3)
+abline(h=0, untf=FALSE, lty=3, xpd=FALSE)
 legend(2011,20 ,c("Gamybinis PMI","Paslaugų PMI", "Bendras PMI"),lty=c(1,1),bty = "n",lwd=3,col=c("black","grey","steelblue"), cex = 1, horiz = TRUE)
 dev.off()
 
@@ -302,11 +338,11 @@ Sys.setlocale("LC_ALL", "Lithuanian")
 par(mfrow=c(2,1),oma = c(0, 0, 0, 2),xpd="NA")
 plot(seman$Date, seman$PMI, type="l", lwd=3, col="black", ylab="PMI", xlab="Metai",  
      main="PMI Švedijoje 2008-2020m.")
-abline(h=50, untf = FALSE, lty=3)
+abline(h=50, untf = FALSE, lty=3, xpd=FALSE)
 lines(seser$Date, seser$PMI, type="l", lwd=3, col="steelblue")
 plot( gdp$time, gdp$SE, type="l", lwd=3, col="black",
       main="BVP Švedijoje 2008-2020m.", sub="Duomenų šaltiniai: IHS Markit, Eurostat, skaičiavimai: Corona-stat.lt", xlab="Metai", ylab="BVP augimas, %", xlim=c(2008,2019.5))
-abline(h=0, untf=FALSE, lty=3)
+abline(h=0, untf=FALSE, lty=3, xpd=FALSE)
 legend(2011,23 ,c("Gamybinis PMI","Paslaugų PMI"),lty=c(1,1),bty = "n",lwd=3,col=c("black","steelblue"), cex = 1, horiz = TRUE)
 dev.off()
 
@@ -341,12 +377,12 @@ Sys.setlocale("LC_ALL", "Lithuanian")
 par(mfrow=c(2,1),oma = c(0, 0, 0, 2),xpd="NA")
 plot(usman$Date, usman$PMI, type="l", lwd=3, col="black", ylab="PMI", xlab="Metai",  
      main="PMI JAV 2008-2020m.")
-abline(h=50, untf = FALSE, lty=3)
+abline(h=50, untf = FALSE, lty=3, xpd=FALSE)
 lines(usser$Date, usser$PMI, type="l", lwd=3, col="steelblue")
 lines(uscom$Date, uscom$PMI, type="l", lwd=3, col="grey")
 plot( usgdp$DATE, usgdp$GDPC1_PC1, type="l", lwd=3, col="black",
       main="BVP JAV 2008-2020m.", sub="Duomenų šaltiniai: IHS Markit, ISM, Federal Reserve Bank, skaičiavimai: Corona-stat.lt", xlab="Metai", ylab="BVP augimas, %", xlim=c(2008,2019.8))
-abline(h=0, untf=FALSE, lty=3)
+abline(h=0, untf=FALSE, lty=3, xpd=FALSE)
 legend(2010,15 ,c("Gamybinis PMI","Paslaugų PMI", "Bendras PMI"),lty=c(1,1),bty = "n",lwd=3,col=c("black","steelblue", "grey"), cex = 1, horiz = TRUE)
 dev.off()
 
@@ -380,12 +416,12 @@ png("./static/post/2020-04-18-verslo-lukesciai-uzsienio-rinkose/UK.png", width =
 Sys.setlocale("LC_ALL", "Lithuanian")
 par(mfrow=c(2,1),oma = c(0, 0, 0, 2),xpd="NA")
 plot(ukman$Date, ukman$PMI, type="l", lwd=3, col="black", ylab="PMI", xlab="Metai",  
-     main="PMI JK 2008-2020m.")
-abline(h=50, untf = FALSE, lty=3)
+     main="PMI Jungtinėje Karalystėje 2008-2020m.")
+abline(h=50, untf = FALSE, lty=3, xpd=FALSE)
 lines(ukser$Date, ukser$PMI, type="l", lwd=3, col="steelblue")
 lines(ukcom$Date, ukcom$PMI, type="l", lwd=3, col="grey")
 plot( gdp$time, gdp$UK, type="l", lwd=3, col="black",
       main="BVP Jungtinėje Karalystėje 2008-2020m.", sub="Duomenų šaltiniai: IHS Markit, ISM, Eurostat, skaičiavimai: Corona-stat.lt", xlab="Metai", ylab="BVP augimas, %", xlim=c(2008,2019.5))
-abline(h=0, untf=FALSE, lty=3)
+abline(h=0, untf=FALSE, lty=3, xpd=FALSE)
 legend(2011,12 ,c("Gamybinis PMI","Paslaugų PMI", "Bendras PMI"),lty=c(1,1),bty = "n",lwd=3,col=c("black","steelblue", "grey"), cex = 1, horiz = TRUE)
 dev.off()

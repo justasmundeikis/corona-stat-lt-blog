@@ -164,6 +164,8 @@ Bendras PMI fiksavo 17 punktų kritimą nuo 53 iki 36.
 
 Mažesnė gamyba ir vidinė paklausa atsilieps ir Lietuvos ekonomikai, kuri poveikį pajus ne tik dėl pagrindinių prekių eksporto mažėjimo, tačiau ir dėl kito svarbaus veiksnio - Lietuvos emigrantų piniginių perlaidų į Lietuvą sumažėjimo. 
 
+![11-as grafikas](/post/2020-04-18-verslo-lukesciai-uzsienio-rinkose/UK.png)
+
 
 # Epilogas
 
