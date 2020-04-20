@@ -44,7 +44,7 @@ Iš kitos pusės atvira ekonomikos struktūra byloja apie didelį pažeidžiamum
 
 # Lietuvos eksporto rinkos
 
-Pagrindinių Lietuvos prekybos partnerių nustatymui reikia vertinti ne bendrą, bet tik lietuviškos kilmės prekių eksportą be rafinuotų naftos produktų. Lietuviškos kilmės prekių eksportas eliminuoja reeksporto prekių srautus, pavyzdžiui naudotų automobilių importą ir eksportą į NVS valstybes, o rafinuoti naftos produktai eliminuojami, jog panaikintas statistikos iškraipymas dėl nuolatinių naftos ir jos produktų kainų svyravimo.
+Pagrindinių Lietuvos prekybos partnerių nustatymui reikia vertinti ne bendrą, bet tik lietuviškos kilmės prekių eksportą be rafinuotų naftos produktų. Lietuviškos kilmės prekių eksportas eliminuoja reeksporto prekių srautus, pavyzdžiui naudotų automobilių importą ir eksportą į NVS valstybes, o rafinuoti naftos produktai eliminuojami tam, kad būtų panaikintas statistikos iškraipymas dėl nuolatinių naftos ir jos produktų kainų svyravimo.
 
 Po Rusijos embargo į eksportą orientuotas verslas [greitai persiorientavo į “labiau patikimus vakarus”](http://lithuanian-economy.net/wp-content/uploads/2016/06/Tribuna_21.pdf), tad 2019 metais eksportas į Eurozonos valstybes sudarė 41 proc. viso lietuviškos kilmės eksporto (be rafinuotų naftos produktų), į Europos sąjungos šalis - 62 proc., o į Europos ekonominės erdvės valstybes - 72 proc.
 
