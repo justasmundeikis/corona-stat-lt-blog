@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>statistika on Corona-Stat.lt</title>
-    <link>/tags/statistika/</link>
+    <link>https://corona-stat.lt/tags/statistika/</link>
     <description>Recent content in statistika on Corona-Stat.lt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="/tags/statistika/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://corona-stat.lt/tags/statistika/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Europos statistika</title>
-      <link>/eustat/</link>
+      <link>https://corona-stat.lt/eustat/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/eustat/</guid>
-      <description>Europa - žemėlapiai Užsikrėtimai (abs.)  Užsikrėtimai (/pop.)  Nauji (abs.) Žemiau pateikiamas naujų registruotų atvejų absoliutus skaičiaus pokytis per paskutinę parą (2020-04-16 - 2020-04-17 ). Iš šio žemėlapio galima matyti, kur atsirado daugiausiai naujų atvejų.
- Nauji (proc.) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutinę parą (2020-04-16 - 2020-04-17 ). Žemėlapyje atvaizduojamos tik šalys turinčios daugiau nei 10 regsitruotų atvejų. Šis žemėlapis iliustruoja aktyviųs koronaviruso židinius pasaulyje.</description>
+      <guid>https://corona-stat.lt/eustat/</guid>
+      <description>Europa - žemėlapiai Užsikrėtimai (abs.)  Užsikrėtimai (/pop.)  Nauji (abs.) Žemiau pateikiamas naujų registruotų atvejų absoliutus skaičiaus pokytis per paskutinę parą (2020-04-18 - 2020-04-19 ). Iš šio žemėlapio galima matyti, kur atsirado daugiausiai naujų atvejų.
+ Nauji (proc.) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutinę parą (2020-04-18 - 2020-04-19 ). Žemėlapyje atvaizduojamos tik šalys turinčios daugiau nei 10 regsitruotų atvejų. Šis žemėlapis iliustruoja aktyviųs koronaviruso židinius pasaulyje.</description>
     </item>
     
     <item>
       <title>Pasaulio statistika</title>
-      <link>/wstat/</link>
+      <link>https://corona-stat.lt/wstat/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/wstat/</guid>
+      <guid>https://corona-stat.lt/wstat/</guid>
       <description>Pasaulinė statistika Žemiau pateikiama atrinkta statistika, kuri leidžia geriau įvertinti coronos viruso paplitimą pasaulyje.
-Pasaulis - žemėlapiai Užsikrėtimai (abs.)  Užsikrėtimai (/pop.)  Nauji (abs.) Žemiau pateikiamas naujų registruotų atvejų absoliutus skaičiaus pokytis per paskutinę parą (2020-04-16 - 2020-04-17). Iš šio žemėlapio galima matyti, kur atsirado daugiausiai naujų atvejų.
- Nauji (proc.) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutinę parą (2020-04-16 - 2020-04-17 ). Žemėlapyje atvaizduojamos tik šalys turinčios daugiau nei 500 regsitruotų atvejų.</description>
+Pasaulis - žemėlapiai Užsikrėtimai (abs.)  Užsikrėtimai (/pop.)  Nauji (abs.) Žemiau pateikiamas naujų registruotų atvejų absoliutus skaičiaus pokytis per paskutinę parą (2020-04-18 - 2020-04-19). Iš šio žemėlapio galima matyti, kur atsirado daugiausiai naujų atvejų.
+ Nauji (proc.) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutinę parą (2020-04-18 - 2020-04-19 ). Žemėlapyje atvaizduojamos tik šalys turinčios daugiau nei 500 regsitruotų atvejų.</description>
     </item>
     
   </channel>
