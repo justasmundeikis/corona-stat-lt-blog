@@ -248,7 +248,8 @@ data_world <- data_world %>%
         select (valstybe, value, CNTR_CODE)%>%
         left_join(., pop, by="CNTR_CODE")%>%
         mutate(value=round((value/pop*100000),1))%>%
-        select(valstybe, value)
+        select(valstybe, value)%>%
+        mutate_if(is.numeric, ~round(., 0))
 
 ## Grafikai
 
