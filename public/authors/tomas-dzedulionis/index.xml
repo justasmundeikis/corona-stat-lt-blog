@@ -2,13 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Corona-Stat.lt</title>
-    <link>https://corona-stat.lt/authors/tomas-dzedulionis/</link>
+    <link>/authors/tomas-dzedulionis/</link>
     <description>Recent content on Corona-Stat.lt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sun, 19 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://corona-stat.lt/authors/tomas-dzedulionis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/authors/tomas-dzedulionis/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Verslo lūkesčiai užsienio rinkose - ką jie reiškia Lietuvai?</title>
+      <link>/2020/04/19/verslo-lukesciai-uzsienio-rinkose-ka-jie-reiskia-lietuvai/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/04/19/verslo-lukesciai-uzsienio-rinkose-ka-jie-reiskia-lietuvai/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Koronaviruso pandemija privertė daugelį šalių reaguoti griežtomis priemonėmis - ribojant fizinį (socialinį) kontaktą buvo siekiama mažinti spartaus viruso plitimo tikimybę. Uždarytos parduotuvės, paslaugos, atšaukti renginiai bei kelionės atsilieps Lietuvos ekonomikai ne tik tiesiogiai, bet ir per sumažėjusią užsienio paklausą prekėms ir paslaugoms Lietuvos eksporto rinkose. Šiuo metu, kai dar nėra pakankamai patikimų statistinių duomenų, verslo lūkesčių rodikliai tampa pirmaisiais duomenimis, nusakančiais ko galima tikėtis. Tad šiame komentare apie verslo lūkesčius pagrindinėse Lietuvos eksporto rinkose.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     
   </channel>
 </rss>
