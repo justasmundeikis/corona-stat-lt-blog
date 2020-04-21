@@ -1,0 +1,21 @@
+\begin{table}[H]
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}{lr}
+\toprule
+Sektorius & Skaičius\\
+\midrule
+\rowcolor{gray!6}  Keleivinis oro transportas & 420\\
+Kitų baldų gamyba & 87\\
+\rowcolor{gray!6}  Konsultacinė verslo ir kito valdymo veikla & 83\\
+Avalynės gamyba & 79\\
+\rowcolor{gray!6}  Kitų viršutinių drabužių siuvimas & 76\\
+\addlinespace
+Mėsos ir paukštienos produktų gamyba & 70\\
+\rowcolor{gray!6}  Elektrinių buitinių aparatų ir prietaisų mažmeninė prekyba specializuotose parduotuvėse & 59\\
+Pagrindinis ugdymas & 54\\
+\rowcolor{gray!6}  Paprastasis pastatų valymas & 50\\
+Vandens statinių statyba & 50\\
+\bottomrule
+\end{tabular}}
+\end{table}
