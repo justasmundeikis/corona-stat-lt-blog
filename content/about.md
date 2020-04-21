@@ -13,7 +13,7 @@ Koronos virusas (SARS-CoV-2) pirmą kartą užfiksuotas lapkričio 17 d. Kinijoj
 
 **Šį puslapį rengia**
 
-* Arminte Globytė (VU EVAF)
+* Armintė Globytė (VU EVAF)
 * Justas Mundeikis (Lithuanian-Economy.net)
 * Rokas Klydžia
 * Tomas Dzedulionis (VU EVAF)
