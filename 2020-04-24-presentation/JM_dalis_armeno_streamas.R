@@ -5,6 +5,7 @@ if(!require("RColorBrewer")) install.packages("RColorBrewer", dep = T); library(
 if(!require("zoo")) install.packages("zoo", dep = T); library("zoo")
 if(!require("kableExtra")) install.packages("kableExtra", dep = T); library("kableExtra")
 if(!require("rvest")) install.packages("rvest", dep = T); library("rvest")
+if(!require("magrittr")) install.packages("magrittr", dep = T); library("magrittr")
 
 # creating empty folder for figures
 if(!dir.exists("figures")) dir.create("figures")
@@ -12,7 +13,9 @@ if(!dir.exists("figures")) dir.create("figures")
 # downloading data
 prc_hicp_manr <- get_eurostat("prc_hicp_manr", stringsAsFactors = FALSE)
 UT_data <-read.csv("vidurkis_datai_data-1.csv", stringsAsFactors = FALSE, sep=";")
-
+apple <- read.csv("./applemobilitytrends-2020-04-20.csv", stringsAsFactors = FALSE)
+US_02_01 <- read.csv("./apdraustuju_skaicius_2020_02_01.CSV", sep=";", skip = 3, header = FALSE)
+US_04_22 <- read.csv("./apdraustuju_skaicius_2020_04_22.CSV", sep=";", skip = 3, header = FALSE)
 
 
 ################################################################################
@@ -192,4 +195,53 @@ ggplot(df, aes(Laikas, reikšmė, col=Rodiklis))+
               legend.position = "bottom")
 dev.off()
 
+################################################################################
+#### Apple
+################################################################################
+#### Pasirinktos šalys
+################################################################################
+apple <- apple %>%
+        gather(key=date, value=values, 4:ncol(.))%>%
+        mutate(date=date %>% substr(2,11) %>% ymd())%>%
+        rename(geo=region,
+               var=transportation_type)
 
+df <- apple%>%
+        filter(geo %in% c("Lithuania", "Latvia", "Estonia", "Sweden", "Germany"))%>%
+        group_by(geo, var)%>%
+        mutate(values=rollmean(values,7, na.pad = TRUE))
+
+png("./figures/apple_judejimas.png", width = 9, height = 5, units = 'in', res = 200)
+ggplot(df, aes(date, values, col=geo))+
+        geom_line()+
+        scale_color_brewer(palette = "Set1", type = "qual")+
+        facet_grid(cols=vars(var))+
+        labs(title="Apple maps užklausų skaičiaus indeksas (7d. slenkantis vidurkis)",
+             subtitle="Šaltinis: Apple.com, skaičiavimai: Corona-Stat.lt",
+             x="Laikotarpis",
+             y="")+
+        theme(axis.text.x = element_text(angle = 45, hjust = 1),
+              legend.position = "bottom")
+
+dev.off()
+
+################################################################################
+#### Lietuva
+################################################################################
+df <- apple%>%
+        filter(geo=="Lithuania")%>%
+        group_by(geo, var)
+
+png("./figures/apple_judejimas_lt.png", width = 9, height = 5, units = 'in', res = 200)
+ggplot(df, aes(date, values, col=var))+
+        geom_line()+
+        scale_color_brewer(palette = "Set1", type = "qual")+
+        scale_x_date(breaks="1 weeks")+
+        labs(title="Apple maps užklausų skaičiaus indeksas Lietuvoje",
+             subtitle="Šaltinis: Apple.com, skaičiavimai: Corona-Stat.lt",
+             x="Laikotarpis",
+             y="")+
+        theme(axis.text.x = element_text(angle = 45, hjust = 1),
+              legend.position = "bottom")
+
+dev.off()
