@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on Corona-Stat.lt</title>
-    <link>https://corona-stat.lt/authors/</link>
+    <link>/authors/</link>
     <description>Recent content in Authors on Corona-Stat.lt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://corona-stat.lt/authors/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title></title>
-      <link>https://corona-stat.lt/authors/tomas-dzedulionis/</link>
-      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://corona-stat.lt/authors/tomas-dzedulionis/</guid>
-      <description>Tomas nuo 2018 metų studijuoja ekonomiką Vilniaus universitete. Ekonomikos analitiką domininčios temos:
- Pramonė Paslaugos Vartotojų ir verslo lūkesčiai Duomenų analitika  </description>
-    </item>
     
     <item>
       <title></title>
-      <link>https://corona-stat.lt/authors/arminte-globyte/</link>
-      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      <link>/authors/arminte-globyte/</link>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corona-stat.lt/authors/arminte-globyte/</guid>
+      <guid>/authors/arminte-globyte/</guid>
       <description>Nuo 2018 metų studijuoja ekonomiką Vilniaus universitete. Ekonomikos analitikę domininčios temos:
  Darbo rinka Makroekonomika Duomenų analitika  </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://corona-stat.lt/authors/justas-mundeikis/</link>
-      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      <link>/authors/justas-mundeikis/</link>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corona-stat.lt/authors/justas-mundeikis/</guid>
+      <guid>/authors/justas-mundeikis/</guid>
       <description>Ekonomistas, lektorius, blogger&amp;rsquo;is ir šiuo metu doktorantas. Visa info Lithuanian-Economy.net</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://corona-stat.lt/authors/rokas-klydzia/</link>
+      <link>/authors/tomas-dzedulionis/</link>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/authors/tomas-dzedulionis/</guid>
+      <description>Tomas nuo 2018 metų studijuoja ekonomiką Vilniaus universitete. Ekonomikos analitiką domininčios temos:
+ Pramonė Paslaugos Vartotojų ir verslo lūkesčiai Duomenų analitika  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/authors/rokas-klydzia/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://corona-stat.lt/authors/rokas-klydzia/</guid>
+      <guid>/authors/rokas-klydzia/</guid>
       <description>Info</description>
     </item>
     

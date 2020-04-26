@@ -1,8 +1,0 @@
-\babel@toc {lithuanian}{}
-\beamer@sectionintoc {1}{Apie Corona-Stat.lt}{3}{0}{1}
-\beamer@sectionintoc {2}{Covid situacija}{5}{0}{2}
-\beamer@sectionintoc {3}{Nedarbas Lietuvoje}{8}{0}{3}
-\beamer@sectionintoc {4}{Infliacija}{10}{0}{4}
-\beamer@sectionintoc {5}{Pramon\IeC {\.e}, l\IeC {\=u}kes\IeC {\v c}iai, eksporto rinkos}{14}{0}{5}
-\beamer@sectionintoc {6}{Kod\IeC {\.e}l krenta naftos kaina?}{18}{0}{6}
-\beamer@sectionintoc {7}{Koronabonds}{22}{0}{7}
