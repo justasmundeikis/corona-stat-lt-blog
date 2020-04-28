@@ -1,4 +1,4 @@
----
+﻿---
 title: 2020 kovo mėn. mažmeninės prekybos ir maitinimo įmonių apyvarta
 slug: mazmenines-prekybos-maitinimo-apyvarta
 authors:
@@ -53,3 +53,14 @@ Panašus *staigumas* matomas ir vertinant metinius augimo tempus:
 Akivaizdu, jog 2020-balandžio mėnesį bus fiksuojamas dar spartesnis mažmeninės prekybos ne maisto prekėmis bei maitinimo ir gėrimų tiekimo įmonių apyvartos kritimas. Tuo tarpu velykinis periodas labiau kilstelės mažmeninės prekybos maisto prekėmis apyvartą.
 
 Turint omenyje, jog namų ūkių galutinio vartojimo išlaidos sudaro apie 60% BVP, galima daryti išvadas, jog karantino metu Lietuvos metinis BVP augimas krenta tarp 20-30%. Todėl būtina užtikrinti, jog karantino trukmė ir apimtis būtų proporcinga esamai epidemiologinei rizikai, juolab, jog šiuo metu dar nepilnai jaučiamas gamybos (pramonės sektoriaus) kritimas.
+
+Nors vartotojų lūkesčiai Lietuvos ekonomikos raidai sekančiais 12 mėnesių ir krito labiausiai, visgi tai, jog vartotojų ekonomikos raidos lūkesčiai vėluoja įsitvirtinti vartotojų ketinimuose įsigyti didesnius pirkinius apytiksliai 12 mėnesių, sudaro tam tikras prielaidas, jog naudojantis fiskalinės politikos priemonėmis, valdžia gali bandyti išvengti **W formos** ekonomikos kritimo ateityje. Tam būtina dabar:
+
+* didinti namų ūkių disponuojamas pajamas
+* ilginti ir didinti nedarbo draudimo išmokų dydį bei išmokų gavimo laikotarpį
+* ilginti ir didinti socialinės pagalbos išmokų dydį bei išmokų gavimo laikotarpį
+* įvertinti galimybės pasinaudoti Europos komisijos SURE kuriama paramos pagalba subsidijuojant dalinį darbą
+
+![](/post/2020-04-28-mazmenines-prekybos-maitinimo-apyvarta_files/vartotoju_lukesciai_ts.png)
+
+
