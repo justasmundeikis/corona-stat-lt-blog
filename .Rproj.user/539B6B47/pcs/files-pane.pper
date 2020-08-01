@@ -1,9 +1,9 @@
 {
-    "path" : "~/D/projects/corona-stat-lt-blog/content",
-    "sortOrder" : [
+    "path": "~/data/projects/corona-stat-lt-blog",
+    "sortOrder": [
         {
-            "ascending" : false,
-            "columnIndex" : 2
+            "columnIndex": 2,
+            "ascending": false
         }
     ]
 }
