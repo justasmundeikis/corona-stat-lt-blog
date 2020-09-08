@@ -1,6 +1,10 @@
-# JHCSSE data import
+##  JHCSSE data import
+## more info on https://github.com/CSSEGISandData/COVID-19
 data_confirmed <-read.csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv', stringsAsFactors = FALSE)
 data_deaths <-read.csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv', stringsAsFactors = FALSE)
+data_recovered <-read.csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv', stringsAsFactors = FALSE)
+
+
 
 # function cleaning data 
 cleaning_data <- function(data) {
@@ -14,17 +18,20 @@ cleaning_data <- function(data) {
 # applying function to clean data
 data_confirmed %<>% cleaning_data()%>% rename(confirmed=count)
 data_deaths %<>% cleaning_data() %>% rename(deaths=count)
+data_recovered %<>% cleaning_data() %>% rename(recovered=count)
 
 
 data_confirmed$country[data_confirmed$country=="US"] <- "United States of America"
 data_deaths$country[data_deaths$country=="US"] <- "United States of America"
+data_recovered$country[data_recovered$country=="US"] <- "United States of America"
 
 # assembling all date in one file
-# calcuclating active cases
+# calculating active cases
 data_world <- data_confirmed %>% 
         merge(data_deaths)%>% 
+        merge(data_recovered)%>% 
         gather(key=var, value=value, -c(country, date)) %>%
-        mutate(var=factor(var, levels=c("confirmed","deaths"))) %>%
+        mutate(var=factor(var, levels=c("confirmed","deaths", "recovered"))) %>%
         mutate(valstybe=countrycode(country, origin = "country.name", destination =  "cldr.short.lt",nomatch = NULL ))%>%
         mutate(CNTR_CODE=countrycode(country, origin = "country.name", destination =  "eurostat",nomatch = NULL )) 
 
