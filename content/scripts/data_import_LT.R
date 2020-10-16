@@ -20,3 +20,6 @@ data_lt$has_chronic[data_lt$has_chronic==""] <- "Ne"
 data_lt$imported_country[data_lt$imported_country==""] <- NA
 data_lt$age_group[data_lt$age_group==""] <- NA
 data_lt$sex[data_lt$sex==""] <- NA
+
+# writing csv
+write.csv(data_lt, "./data/data_lt.csv", row.names = FALSE)

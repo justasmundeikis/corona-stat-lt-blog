@@ -17,27 +17,7 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>https://corona-stat.lt/lstat/</guid>
-      <description>Bendras atvejų skaičius  Užsikrėtimai ## Error: Problem with `filter()` input `..1`. ## x object &amp;#39;date_confirmation&amp;#39; not found ## ℹ Input `..1` is `date_confirmation &amp;gt;= two_weeks`. ## Error in FUN(X[[i]], ...): object &amp;#39;date_confirmation&amp;#39; not found ## Error: Must group by variables found in `.data`. ## * Column `age_group` is not found. ## * Column `sex` is not found. ## Error in FUN(X[[i]], ...): object &amp;#39;age_group&amp;#39; not found  Mirtys ## Error: Problem with `filter()` input `.</description>
-    </item>
-    
-    <item>
-      <title>Lietuvos statistika</title>
-      <link>https://corona-stat.lt/ltstat/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://corona-stat.lt/ltstat/</guid>
-      <description>Naujausiais duomenimis (2020-09-08 17:39) Lietuvoje šiuo metu yra:
- iš viso registruotų atvejų - 1491 iš jų pasveiko - 850 iš jų mirė - 50 likęs aktyvių atvejų skaičius - 591  Bendras atvejų skaičius  Naujų atvejų skaičius  Ištyrimai Lietuvoje testuojamų asmenų skaičius nėra didelis (palyginus su Latvija ar Estija) dėl ypatingai mažo turimų reagentų skaičiaus. Todėl 2020-03-21/22 dienomis netgi buvo apribotas mėginių ėmimas Kauno ir Klaipėdos mobiliame punkte.</description>
-    </item>
-    
-    <item>
-      <title>Lietuvos statistika</title>
-      <link>https://corona-stat.lt/ltstat_old/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://corona-stat.lt/ltstat_old/</guid>
-      <description>Naujausiais duomenimis (2020-10-16 18:24) Lietuvoje šiuo metu yra:
- iš viso registruotų atvejų - 1491 iš jų pasveiko - 850 iš jų mirė - 50 likęs aktyvių atvejų skaičius - 591  Bendras atvejų skaičius  Naujų atvejų skaičius  Ištyrimai Lietuvoje testuojamų asmenų skaičius nėra didelis (palyginus su Latvija ar Estija) dėl ypatingai mažo turimų reagentų skaičiaus. Todėl 2020-03-21/22 dienomis netgi buvo apribotas mėginių ėmimas Kauno ir Klaipėdos mobiliame punkte.</description>
+      <description>Bendras atvejų skaičius  Užsikrėtimai ## Error in max.date - 14: non-numeric argument to binary operator ## Error: Problem with `filter()` input `..1`. ## x object &amp;#39;two_weeks&amp;#39; not found ## ℹ Input `..1` is `date_confirmation &amp;gt;= two_weeks`. ## Error in FUN(X[[i]], ...): object &amp;#39;date_confirmation&amp;#39; not found  Mirtys ## Error in max.date - 14: non-numeric argument to binary operator ## Error: Problem with `filter()` input `..1`. ## x object &amp;#39;two_weeks&amp;#39; not found ## ℹ Input `.</description>
     </item>
     
   </channel>
