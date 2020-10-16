@@ -90,7 +90,7 @@ Bendras skaičius  Užsikrėtimai (ts, top 10)  Užsikrėtimai (abs)  Užsikrėt
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>https://corona-stat.lt/lstat/</guid>
-      <description>Bendras atvejų skaičius  Užsikrėtimai ## Error in max.date - 14: non-numeric argument to binary operator ## Error: Problem with `filter()` input `..1`. ## x object &amp;#39;two_weeks&amp;#39; not found ## ℹ Input `..1` is `date_confirmation &amp;gt;= two_weeks`. ## Error in FUN(X[[i]], ...): object &amp;#39;date_confirmation&amp;#39; not found  Mirtys ## Error in max.date - 14: non-numeric argument to binary operator ## Error: Problem with `filter()` input `..1`. ## x object &amp;#39;two_weeks&amp;#39; not found ## ℹ Input `.</description>
+      <description> Bendras atvejų skaičius  Užsikrėtimai  Mirtys  </description>
     </item>
     
     <item>

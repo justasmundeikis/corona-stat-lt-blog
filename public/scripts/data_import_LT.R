@@ -23,3 +23,5 @@ data_lt$sex[data_lt$sex==""] <- NA
 
 # writing csv
 write.csv(data_lt, "./data/data_lt.csv", row.names = FALSE)
+
+rm(list = ls())

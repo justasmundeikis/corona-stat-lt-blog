@@ -21,7 +21,9 @@ data_world <- read.csv("./data/data_world.csv",header = TRUE,stringsAsFactors = 
   mutate(date=as.Date(date),
          var=factor(var, levels=c("confirmed", "recovered","deaths")))
 
-data_lt <- read.csv("./data/data_lt.csv",header = TRUE,stringsAsFactors = FALSE)
+data_lt <- read.csv("./data/data_lt.csv",header = TRUE,stringsAsFactors = FALSE)%>%
+  mutate(date_confirmation=as.Date(date_confirmation),
+         date_infection=as.Date(date_infection))
 ```
 
 ## Bendras atvejų skaičius
@@ -34,8 +36,8 @@ max.date <- max(df$date)
 
 ggplot(df, aes(x=date, y=value, fill=var))+
   geom_area(alpha=0.5)+
-  scale_fill_manual(values=c("red", "black", "green"),
-                    labels=c("Aktyvūs", "Mirę", "Pasveikę"))+
+  scale_fill_manual(values=c("red", "green","black"),
+                    labels=c("Aktyvūs", "Pasveikę", "Mirę"))+
   scale_x_date(breaks="1 month")+
   scale_y_continuous()+
   labs(title="Atvejų skaičius ir pasiskirstymas",
@@ -47,12 +49,12 @@ ggplot(df, aes(x=date, y=value, fill=var))+
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-
 # Užsikrėtimai
+
 ```{r}
 
 max.date <- max(data_lt$date_confirmation)
-two_weeks <- max.date-14
+two_weeks <- max.date-30
 
 df <- data_lt%>%
         filter(date_confirmation>=two_weeks)%>%
@@ -65,10 +67,10 @@ ggplot(df,aes(x=date_confirmation, y=value)) +
            fill="steelblue")+
   geom_text(aes(label=value, y=value), size=3, vjust=-0.75)+
         scale_x_date(breaks = "2 days")+
-  labs(x="Data", 
-       y="Užsikrėtimų skaičius", 
-       title=paste0("Naujų užsikrėtimų skaičius per paskutines 14 dienų, ", max.date),
-       subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt" )+
+  labs(title="Naujų užsikrėtimų skaičius per paskutines 30 dienų",
+       subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
+       x="Data", 
+       y="Užsikrėtimų skaičius")+
   theme(legend.title=element_blank(),
         legend.position='none',
         axis.text.x=element_text(angle=45, hjust=1))
@@ -90,7 +92,8 @@ df <- data_lt%>%
 ggplot(df, aes(age_group,value, fill=sex))+
         geom_bar(stat="identity",
                  position="dodge")+
-        labs(title="Atvejai pagal amžiaus kategorijas, viso",
+              scale_fill_brewer(palette="Set1")+
+        labs(title="Atvejai pagal amžiaus kategorijas",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
                         x="Amžiaus grupė", 
        y="Užsikrėtimų skaičius")+
