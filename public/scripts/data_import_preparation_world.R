@@ -5,12 +5,11 @@ data_deaths <-read.csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-1
 data_recovered <-read.csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv', stringsAsFactors = FALSE)
 
 
-
 # function cleaning data 
 cleaning_data <- function(data) {
         data %<>% select(-c(Province.State, Lat, Long)) %>% rename(country=Country.Region)
         data %<>% gather(key=date, value=count, -country)
-        data %<>% mutate(date=date %>%substr(2,8) %>% mdy())
+        data %<>% mutate(date=date %>%substr(2,9) %>% mdy())
         data %<>% group_by(country, date) %>% summarise(count=sum(count)) %>% as.data.frame()
         
 }

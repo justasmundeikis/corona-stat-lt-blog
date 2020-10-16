@@ -14,3 +14,4 @@ if(!require("countrycode")) install.packages("countrycode"); library("countrycod
 #if(!require("formattable")) install.packages("formattable"); library("formattable") #for work with shapes
 if(!require("readxl")) install.packages("readxl"); library("readxl") #for work with shapes
 if(!require("deSolve")) install.packages("deSolve"); library("deSolve") #folving diffenrential equations
+if(!require("jsonlite")) install.packages("jsonlite"); library("jsonlite") #importing json files
