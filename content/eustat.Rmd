@@ -195,7 +195,7 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
   geom_text(aes(label=value, y=value), size=2.5, hjust=-0.1,angle=90)+
   labs(x="Valstybė", 
        y="Užsikrėtimų skaičius", 
-       title=paste0("Užsikrėtimų skaičius, tūkst. ", max.date,
+       title=paste0("Užsikrėtimų skaičius, tūkst. ", max.date),
        subtitle="Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt" )+
   theme(legend.title=element_blank(),
         legend.position='none',

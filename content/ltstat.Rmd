@@ -26,7 +26,7 @@ data_lt <- read.csv("./data/data_lt.csv",header = TRUE,stringsAsFactors = FALSE)
          date_infection=as.Date(date_infection))
 ```
 
-## Bendras atvejų skaičius
+# Bendras atvejų skaičius
 ```{r, echo=FALSE}
 df <- data_world %>%
   filter(CNTR_CODE == "LT")
@@ -57,17 +57,17 @@ max.date <- max(data_lt$date_confirmation)
 two_weeks <- max.date-30
 
 df <- data_lt%>%
-        filter(date_confirmation>=two_weeks)%>%
-        group_by(date_confirmation)%>%
-        count(date_confirmation)%>%
-        rename(value=n)
+  filter(date_confirmation>=two_weeks)%>%
+  group_by(date_confirmation)%>%
+  count(date_confirmation)%>%
+  rename(value=n)
 
 ggplot(df,aes(x=date_confirmation, y=value)) +
   geom_bar(stat='identity',
            fill="steelblue")+
   geom_text(aes(label=value, y=value), size=3, vjust=-0.75)+
-        scale_x_date(breaks = "2 days")+
-  labs(title="Naujų užsikrėtimų skaičius per paskutines 30 dienų",
+  scale_x_date(breaks = "2 days")+
+  labs(title="Užsikrėtimų skaičius per paskutines 30 dienų",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
        x="Data", 
        y="Užsikrėtimų skaičius")+
@@ -82,20 +82,20 @@ ggplot(df,aes(x=date_confirmation, y=value)) +
 ```{r}
 
 df <- data_lt%>%
-        group_by(age_group, sex)%>%
-        summarise(value=n())%>%
-        na.omit()%>%
-        mutate(age_group=factor(age_group,
-                levels=c("0-9","10-19","20-29","30-39","40-49",
-                         "50-59","60-69","70-79","80-89","90-99","100-109")))
+  group_by(age_group, sex)%>%
+  summarise(value=n())%>%
+  na.omit()%>%
+  mutate(age_group=factor(age_group,
+                          levels=c("0-9","10-19","20-29","30-39","40-49",
+                                   "50-59","60-69","70-79","80-89","90-99","100-109")))
 
 ggplot(df, aes(age_group,value, fill=sex))+
-        geom_bar(stat="identity",
-                 position="dodge")+
-              scale_fill_brewer(palette="Set1")+
-        labs(title="Atvejai pagal amžiaus kategorijas",
+  geom_bar(stat="identity",
+           position="dodge")+
+  scale_fill_brewer(palette="Set1")+
+  labs(title="Užsikrėtimai pagal amžiaus kategorijas",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
-                        x="Amžiaus grupė", 
+       x="Amžiaus grupė", 
        y="Užsikrėtimų skaičius")+
   theme(legend.title=element_blank(),
         legend.position='bottom',
@@ -103,55 +103,86 @@ ggplot(df, aes(age_group,value, fill=sex))+
 ```
 
 
+```{r}
+max.date <- max(data_lt$date_confirmation)
+two_weeks <- max.date-30
+
+df <- data_lt%>%
+  filter(date_confirmation>=two_weeks)%>%
+  group_by(age_group, sex)%>%
+  summarise(value=n())%>%
+  na.omit()%>%
+  mutate(age_group=factor(age_group,
+                          levels=c("0-9","10-19","20-29","30-39","40-49",
+                                   "50-59","60-69","70-79","80-89","90-99","100-109")))
+
+ggplot(df, aes(age_group,value, fill=sex))+
+  geom_bar(stat="identity",
+           position="dodge")+
+  scale_fill_brewer(palette="Set1")+
+  labs(title="Užsikrėtimai pagal amžiaus kategorijas, paskutinės 30d.",
+       subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
+       x="Amžiaus grupė", 
+       y="Užsikrėtimų skaičius")+
+  theme(legend.title=element_blank(),
+        legend.position='bottom',
+        axis.text.x=element_text(angle=45, hjust=1))
+```
+
 # Mirtys
+
+```{r}
+df <- data_lt%>%
+  filter(result=="Mirė")%>%
+  group_by(age_group, sex)%>%
+  summarise(value=n())%>%
+  na.omit()%>%
+  mutate(age_group=factor(age_group,
+                          levels=c("0-9","10-19","20-29","30-39","40-49",
+                                   "50-59","60-69","70-79","80-89","90-99","100-109")))
+
+ggplot(df, aes(age_group,value, fill=sex))+
+  geom_bar(stat="identity",
+           position="dodge")+
+  scale_fill_brewer(palette="Set1")+
+  labs(title="Mirusieji pagal amžiaus kategorijas",
+       subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
+       x="Amžiaus grupė", 
+       y="Mirusiųjų skaičius")+
+  theme(legend.title=element_blank(),
+        legend.position='bottom',
+        axis.text.x=element_text(angle=45, hjust=1))
+```
+
+
 ```{r}
 
 max.date <- max(data_lt$date_confirmation)
-two_weeks <- max.date-14
+two_weeks <- max.date-30
 
 df <- data_lt%>%
-        filter(date_confirmation>=two_weeks)%>%
-        group_by(age_group, sex)%>%
-        summarise(value=n())%>%
-        na.omit()%>%
-        mutate(age_group=factor(age_group,
-                levels=c("0-9","10-19","20-29","30-39","40-49",
-                         "50-59","60-69","70-79","80-89","90-99","100-109")))
+  filter(result=="Mirė",
+         date_confirmation>=two_weeks)%>%
+  group_by(age_group, sex)%>%
+  summarise(value=n())%>%
+  na.omit()%>%
+  mutate(age_group=factor(age_group,
+                          levels=c("0-9","10-19","20-29","30-39","40-49",
+                                   "50-59","60-69","70-79","80-89","90-99","100-109")))
 
 ggplot(df, aes(age_group,value, fill=sex))+
-        geom_bar(stat="identity",
-                 position="dodge")+
-            scale_fill_brewer(palette="Set1")+
-        labs(title="Atvejai pagal amžiaus kategorijas, paskutinės 14 dienų",
+  geom_bar(stat="identity",
+           position="dodge")+
+  scale_fill_brewer(palette="Set1")+
+  labs(title="Atvejai pagal amžiaus kategorijas, paskutinės 30 dienų",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
-                        x="Amžiaus grupė", 
-       y="Užsikrėtimų skaičius")+
+       x="Amžiaus grupė", 
+       y="Mirusiųjų skaičius")+
   theme(legend.title=element_blank(),
         legend.position='bottom',
         axis.text.x=element_text(angle=45, hjust=1))
 ```
 
 
-```{r}
-df <- data_lt%>%
-        filter(result=="Mirė")%>%
-        group_by(age_group, sex)%>%
-        summarise(value=n())%>%
-        na.omit()%>%
-        mutate(age_group=factor(age_group,
-                levels=c("0-9","10-19","20-29","30-39","40-49",
-                         "50-59","60-69","70-79","80-89","90-99","100-109")))
 
-ggplot(df, aes(age_group,value, fill=sex))+
-        geom_bar(stat="identity",
-                 position="dodge")+
-            scale_fill_brewer(palette="Set1")+
-        labs(title="Mirusieji pagal amžiaus kategorijas, paskutinės 14 dienų",
-       subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
-                        x="Amžiaus grupė", 
-       y="Užsikrėtimų skaičius")+
-  theme(legend.title=element_blank(),
-        legend.position='bottom',
-        axis.text.x=element_text(angle=45, hjust=1))
-```
 
