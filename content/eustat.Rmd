@@ -195,7 +195,7 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
   geom_text(aes(label=value, y=value), size=2.5, hjust=-0.1,angle=90)+
   labs(x="Valstybė", 
        y="Užsikrėtimų skaičius", 
-       title=paste0("Užsikrėtimų skaičius, tūkst. ( ", max.date),
+       title=paste0("Užsikrėtimų skaičius, tūkst. ", max.date,
        subtitle="Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt" )+
   theme(legend.title=element_blank(),
         legend.position='none',
@@ -281,7 +281,7 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
   geom_bar(stat='identity',
            fill="steelblue")+
   geom_text(aes(label=value, y=value), size=3, vjust=-0.75)+
-  labs(title=paste0("Naujų užsikrėtimų per paskutinę dieną, % ( ", max.date),
+  labs(title=paste0("Naujų užsikrėtimų per paskutinę dieną, %  ", max.date),
        subtitle="Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt",
        x="Valstybė", 
        y="proc. pokytis")+
@@ -340,7 +340,7 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
   geom_text(aes(label=value, y=value), size=3, vjust=-0.75)+
   labs(x="Valstybė", 
        y="Užsikrėtimų skaičius", 
-       title=paste0("Mirčių skaičius per paskutinę parą ( ", max.date),
+       title=paste0("Mirčių skaičius per paskutinę parą  ", max.date),
        subtitle="Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt" )+
   theme(legend.title=element_blank(),
         legend.position='none',
