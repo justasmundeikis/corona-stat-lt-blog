@@ -5,10 +5,6 @@
     <link>https://corona-stat.lt/authors/rokas-klydzia/</link>
     <description>Recent content on Corona-Stat.lt</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    
-	<atom:link href="https://corona-stat.lt/authors/rokas-klydzia/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language><atom:link href="https://corona-stat.lt/authors/rokas-klydzia/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
