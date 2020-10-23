@@ -111,11 +111,10 @@ ggplot(df, aes(fill=percent))+
   labs(title="Atvejų skaičius tenkantis 100 000 gyventojų per paskutines 14 dienų",
        subtitle = "Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt")
 
-
 ```
 
-```{r}
 
+```{r}
 df <- data_lt%>%
   group_by(age_group, sex)%>%
   summarise(value=n())%>%
@@ -140,7 +139,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
 
 ```{r}
 max.date <- max(data_lt$date_confirmation)
-two_weeks <- max.date-30
+two_weeks <- max.date-14
 
 df <- data_lt%>%
   filter(date_confirmation>=two_weeks)%>%
@@ -155,7 +154,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
   geom_bar(stat="identity",
            position="dodge")+
   scale_fill_brewer(palette="Set1")+
-  labs(title="Užsikrėtimai pagal amžiaus kategorijas, paskutinės 30d.",
+  labs(title="Užsikrėtimai pagal amžiaus kategorijas, paskutinės 14d.",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
        x="Amžiaus grupė", 
        y="Užsikrėtimų skaičius")+
@@ -163,6 +162,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
         legend.position='bottom',
         axis.text.x=element_text(angle=45, hjust=1))
 ```
+
 
 # Mirtys
 
