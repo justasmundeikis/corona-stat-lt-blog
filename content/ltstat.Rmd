@@ -24,6 +24,14 @@ data_world <- read.csv("./data/data_world.csv",header = TRUE,stringsAsFactors = 
 data_lt <- read.csv("./data/data_lt.csv",header = TRUE,stringsAsFactors = FALSE)%>%
   mutate(date_confirmation=as.Date(date_confirmation),
          date_infection=as.Date(date_infection))
+
+# loading shape files
+#source: 
+gis_data <- st_read(dsn = "./shape_files/bandomasis surasymas.gdb/a0000000a.gdbtable")%>%
+  select(SAV_KODAS, SAV_PAV,Is_viso,Shape)%>% 
+  group_by(SAV_PAV)%>%
+  summarise(gyventojai=sum(Is_viso))%>%
+  mutate(SAV_PAV=gsub(" sav.", "", SAV_PAV))
 ```
 
 # Bendras atvejų skaičius
@@ -78,6 +86,33 @@ ggplot(df,aes(x=date_confirmation, y=value)) +
 
 ```
 
+
+```{r}
+max.date <- max(data_lt$date_confirmation)
+two_weeks <- max.date-14
+
+test <- data_lt%>%
+  filter(date_confirmation>=two_weeks)%>%
+  group_by(county)%>%
+  summarise(cases=n())%>%
+  rename(SAV_PAV=county)
+
+df <- left_join(gis_data, test, by="SAV_PAV")%>%
+  mutate(percent=round(cases/gyventojai*100000,0))
+
+my_breaks <- c(1,10,25,100,700,1000)
+
+ggplot(df, aes(fill=percent))+
+  geom_sf()+
+  scale_fill_gradientn(colours=brewer.pal(name ="YlOrRd", n=9),
+                       name="Skaičius",
+                       trans="log",
+                       na.value = "grey100")+
+  labs(title="Atvejų skaičius tenkantis 100 000 gyventojų per paskutines 14 dienų",
+       subtitle = "Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt")
+
+
+```
 
 ```{r}
 
