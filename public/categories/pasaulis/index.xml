@@ -13,9 +13,9 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>https://corona-stat.lt/wstat/</guid>
-      <description>Pasaulinė statistika Žemiau pateikiama atrinkta statistika, kuri leidžia geriau įvertinti COVID-19 viruso paplitimą pasaulyje.
-Pasaulis - žemėlapiai Užsikrėtimai (/pop.)  Nauji (proc.) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutinę parą (2020-10-24 - 2020-10-25 ). Žemėlapyje atvaizduojamos tik šalys turinčios daugiau nei 500 regsitruotų atvejų ir daugiau nei 5% dienos augimą Šis žemėlapis iliustruoja aktyviųs koronaviruso židinius pasaulyje.
-Bendras skaičius  Užsikrėtimai (ts, top 5)  Užsikrėtimai (ts, top 6-16 vietos)  Užsikrėtimai (abs)  Užsikrėtimai (abs, d/d)  Užsikrėtimai (/pop)  Užsikrėtimai (proc.</description>
+      <description> Statistika * iš JHCSSE 2020-10-26
+Pasaulis - žemėlapiai Užsikrėtimai (/pop.)  Nauji (proc. 14d) Žemiau pateikiamas naujų registruotų atvejų skaičiaus santykinis pokytis (procentais) per paskutines 14 dienų. Šis žemėlapis iliustruoja aktyvius koronaviruso židinius pasaulyje.
+  Užsikrėtimai Bendras skaičius  Užsikrėtimai (ts, top 5)  Užsikrėtimai (ts, top 6-16 vietos)  Užsikrėtimai (abs)  Užsikrėtimai (abs, d/d)  Užsikrėtimai (/pop)  Užsikrėtimai (proc. d/d)  Užsikrėtimai (ts, top 6) ## NULL  Mirtys (abs)  Mirtys (abs, d/d)  Mirtys (/pop)  Mirtingumas (top 20)  Mirtys (ts, top 9) ## NULL   </description>
     </item>
     
   </channel>

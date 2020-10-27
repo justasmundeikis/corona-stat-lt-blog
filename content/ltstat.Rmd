@@ -36,6 +36,12 @@ gis_data <- st_read(dsn = "./shape_files/bandomasis surasymas.gdb/a0000000a.gdbt
 
 # Statistika
 
+Statistika
+* iš JHCSSE `r max(data_world$date)`
+* iš NVSC imtinai iki `r max(data_lt$date_confirmation)`
+
+## Bendras skaičius
+
 ```{r, echo=FALSE}
 df <- data_world %>%
   filter(CNTR_CODE == "LT")
@@ -47,7 +53,7 @@ ggplot(df, aes(x=date, y=value, fill=var))+
   geom_area(alpha=0.5)+
   scale_fill_manual(values=c("red", "green","black"),
                     labels=c("Aktyvūs", "Pasveikę", "Mirę"))+
-  scale_x_date(breaks="1 month")+
+  scale_x_date(breaks="1 month", date_labels = "%Y-%m")+
   scale_y_continuous()+
   labs(title="Atvejų skaičius ir pasiskirstymas",
        subtitle = "Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt",
@@ -58,6 +64,7 @@ ggplot(df, aes(x=date, y=value, fill=var))+
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+## Per paskutines 30d
 ```{r}
 
 max.date <- max(data_lt$date_confirmation)
@@ -74,6 +81,7 @@ ggplot(df,aes(x=date_confirmation, y=value)) +
            fill="steelblue")+
   geom_text(aes(label=value, y=value), size=3, vjust=-0.75)+
   scale_x_date(breaks = "2 days")+
+      scale_y_continuous(limits = c(0,max(df$value)*1.05))+
   labs(title="Užsikrėtimų skaičius per paskutines 30 dienų",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
        x="Data", 
@@ -85,6 +93,7 @@ ggplot(df,aes(x=date_confirmation, y=value)) +
 
 ```
 
+## Per paskutines 14d.
 
 ```{r}
 max.date <- max(data_lt$date_confirmation)
@@ -112,7 +121,34 @@ ggplot(df, aes(fill=percent))+
 
 ```
 
+## Vakar dienos atvejų skaičius
 
+```{r}
+max.date <- max(data_lt$date_confirmation)
+
+test <- data_lt%>%
+  filter(date_confirmation>=max.date)%>%
+  group_by(county)%>%
+  summarise(cases=n())%>%
+  rename(SAV_PAV=county)
+
+df <- left_join(gis_data, test, by="SAV_PAV")
+
+my_breaks <- c(1,10,25,100,700,1000)
+
+ggplot(df, aes(fill=cases))+
+  geom_sf()+
+  scale_fill_gradientn(colours=brewer.pal(name ="YlOrRd", n=9),
+                       name="Skaičius",
+                       trans="log",
+                       na.value = "grey100")+
+  labs(title="Per vakar patvrintų atvėjų skačius",
+       subtitle = "Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt")
+
+```
+
+
+## Užsikrėtimai pagal amžių
 ```{r}
 df <- data_lt%>%
   group_by(age_group, sex)%>%
@@ -135,7 +171,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
         axis.text.x=element_text(angle=45, hjust=1))
 ```
 
-
+## Užsikrėtimai pagal amžių, 14d.
 ```{r}
 max.date <- max(data_lt$date_confirmation)
 two_weeks <- max.date-14
@@ -162,6 +198,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
         axis.text.x=element_text(angle=45, hjust=1))
 ```
 
+## Mirtys pagal amžių
 
 ```{r}
 df <- data_lt%>%
@@ -186,7 +223,29 @@ ggplot(df, aes(age_group,value, fill=sex))+
         axis.text.x=element_text(angle=45, hjust=1))
 ```
 
+## Mirtys pagal amžių
 
+```{r}
+df <- data_lt%>%
+  filter(result=="Mirė")%>%
+  group_by(age_group, has_chronic)%>%
+  summarise(value=n())%>%
+  na.omit()%>%
+  mutate(age_group=factor(age_group,
+                          levels=c("0-9","10-19","20-29","30-39","40-49",
+                                   "50-59","60-69","70-79","80-89","90-99","100-109")))
 
-
-
+ggplot(df, aes(age_group,value))+
+  geom_bar(stat="identity",
+           position="dodge",
+           fill="steelblue")+
+  scale_fill_brewer(palette="Set1")+
+  labs(title="Mirusieji pagal amžiaus kategorijas, ar turėjo chroninių ligų",
+       subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
+       x="Amžiaus grupė", 
+       y="Mirusiųjų skaičius")+
+  theme(legend.title=element_blank(),
+        legend.position='bottom',
+        axis.text.x=element_text(angle=45, hjust=1))+
+  facet_wrap(~has_chronic)
+```
