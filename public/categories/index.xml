@@ -5,34 +5,6 @@
     <link>https://corona-stat.lt/categories/</link>
     <description>Recent content in Categories on Corona-Stat.lt</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate><atom:link href="https://corona-stat.lt/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Europa</title>
-      <link>https://corona-stat.lt/categories/europa/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://corona-stat.lt/categories/europa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lietuva</title>
-      <link>https://corona-stat.lt/categories/lietuva/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://corona-stat.lt/categories/lietuva/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pasaulis</title>
-      <link>https://corona-stat.lt/categories/pasaulis/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://corona-stat.lt/categories/pasaulis/</guid>
-      <description></description>
-    </item>
-    
+    <language>en</language><atom:link href="https://corona-stat.lt/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -37,8 +37,9 @@ gis_data <- st_read(dsn = "./shape_files/bandomasis surasymas.gdb/a0000000a.gdbt
 # Statistika
 
 Statistika
-* iš JHCSSE `r max(data_world$date)`
-* iš NVSC imtinai iki `r max(data_lt$date_confirmation)`
+
+* iš JHCSSE iki imtinai `r max(data_world$date)`
+* iš NVSC iki imtinai `r max(data_lt$date_confirmation)`
 
 ## Bendras skaičius
 
@@ -64,9 +65,9 @@ ggplot(df, aes(x=date, y=value, fill=var))+
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-## Per paskutines 30d
-```{r}
+## Užsikrėtimų skaičius per paskutines 30d
 
+```{r}
 max.date <- max(data_lt$date_confirmation)
 two_weeks <- max.date-30
 
@@ -93,11 +94,12 @@ ggplot(df,aes(x=date_confirmation, y=value)) +
 
 ```
 
-## Per paskutines 14d.
+## Užsikrėtimų skaičius per paskutines 7d / pop
+Šiame žemėlapyje matomas santykinis užsikrėtimų skaičius (tenkantis 100 000 gyventojų). Duomenys pateikiami savivavlybių lygiu. 
 
 ```{r}
 max.date <- max(data_lt$date_confirmation)
-two_weeks <- max.date-14
+two_weeks <- max.date-7
 
 test <- data_lt%>%
   filter(date_confirmation>=two_weeks)%>%
@@ -116,12 +118,14 @@ ggplot(df, aes(fill=percent))+
                        name="Skaičius",
                        trans="log",
                        na.value = "grey100")+
-  labs(title="Atvejų skaičius tenkantis 100 000 gyventojų per paskutines 14 dienų",
+  labs(title="Atvejų skaičius tenkantis 100 000 gyventojų per paskutines 7 dienas",
        subtitle = "Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt")
 
 ```
 
 ## Vakar dienos atvejų skaičius
+
+Šis žemėlapis parodo šiuo metu aktyviausius COVID19 židinius. Skaičiai yra absoliutūs, ne santykiniai.
 
 ```{r}
 max.date <- max(data_lt$date_confirmation)
@@ -142,13 +146,15 @@ ggplot(df, aes(fill=cases))+
                        name="Skaičius",
                        trans="log",
                        na.value = "grey100")+
-  labs(title="Per vakar patvrintų atvėjų skačius",
+  labs(title="Per vakar patvirtintų atvėjų skačius",
        subtitle = "Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt")
 
 ```
 
 
 ## Užsikrėtimai pagal amžių
+Ši diagrama parodo, kaip pasiskirsto užsikrėtimai pagal amžių ir lyti. Diagramoje naudojami visi turimi duomenys.
+
 ```{r}
 df <- data_lt%>%
   group_by(age_group, sex)%>%
@@ -171,10 +177,11 @@ ggplot(df, aes(age_group,value, fill=sex))+
         axis.text.x=element_text(angle=45, hjust=1))
 ```
 
-## Užsikrėtimai pagal amžių, 14d.
+## Užsikrėtimai pagal amžių per paskutines 7d.
+
 ```{r}
 max.date <- max(data_lt$date_confirmation)
-two_weeks <- max.date-14
+two_weeks <- max.date-7
 
 df <- data_lt%>%
   filter(date_confirmation>=two_weeks)%>%
@@ -189,7 +196,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
   geom_bar(stat="identity",
            position="dodge")+
   scale_fill_brewer(palette="Set1")+
-  labs(title="Užsikrėtimai pagal amžiaus kategorijas, paskutinės 14d.",
+  labs(title="Užsikrėtimai pagal amžiaus kategorijas, paskutinės 7d.",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
        x="Amžiaus grupė", 
        y="Užsikrėtimų skaičius")+
@@ -198,7 +205,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
         axis.text.x=element_text(angle=45, hjust=1))
 ```
 
-## Mirtys pagal amžių
+## Mirtys pagal amžių ir lytį
 
 ```{r}
 df <- data_lt%>%
@@ -223,7 +230,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
         axis.text.x=element_text(angle=45, hjust=1))
 ```
 
-## Mirtys pagal amžių
+## Mirtys pagal amžių ir chronines ligas
 
 ```{r}
 df <- data_lt%>%
