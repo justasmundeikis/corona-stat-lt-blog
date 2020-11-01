@@ -1,9 +1,8 @@
 baseURL = "https://corona-stat.lt"
 title = "Corona-Stat.lt"
-#copyright = "Copyright © rancia and the Hugo Authors; all rights reserved."
 paginate = 10
-languageCode = "en"
-DefaultContentLanguage = "en"
+languageCode = "lt"
+DefaultContentLanguage = "lt"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 googleAnalytics = "UA-162832540-1"

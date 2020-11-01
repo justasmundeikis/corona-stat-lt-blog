@@ -76,7 +76,7 @@ ggplot(df, aes(fill=value_pop))+
                        na.value = "grey100",
                        breaks=my_breaks,
                        labels=my_breaks)+
-  labs(title=paste0("Atvejų skaičius tenkantis 100 000 gyventojų, ",max.date,""),
+  labs(title="Atvejų skaičius tenkantis 100 000 gyventojų",
        subtitle = "Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt")
 ```
 

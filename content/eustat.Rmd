@@ -408,8 +408,8 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
   geom_text(aes(label=value, y=value), size=3, vjust=0.5, hjust=-0.25,  angle=90)+
   scale_y_continuous(limits = c(0,max(df$value)*1.15))+
   labs(x="Valstybė", 
-       y="Užsikrėtimų skaičius", 
-       title=paste0("Mirčių skaičius 100.000 gyventojų, ", max.date),
+       y="Mirčių skaičius", 
+       title="Mirčių skaičius 100.000 gyventojų",
        subtitle="Šaltinis: JHCSSE, Skaičiavimai: Corona-Stat.lt" )+
   theme(legend.title=element_blank(),
         legend.position='none',
