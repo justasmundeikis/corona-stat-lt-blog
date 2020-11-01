@@ -6,9 +6,12 @@
 # Date_modification
 
 date=$(date +"%Y-%m-%d %H:%M");
-echo "started $(date)">> ./log.txt;
+echo "started $(date)">> /home/pc/Data/Projects/corona-stat-lt-blog/log.txt;
 
 #git pull;
-Rscript -e "blogdown::build_dir()"&& git add . && git commit -m "automatic update $date" && git push;
+Rscript -e "blogdown::build_dir(dir='/home/pc/Data/Projects/corona-stat-lt-blog/', force=TRUE)";
+git add . ;
+git commit -m "automatic update $date";
+git push;
 
-echo "finished $(date)">> ./log.txt
+echo "finished $(date)" >> /home/pc/Data/Projects/corona-stat-lt-blog/log.txt
