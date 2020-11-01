@@ -14,4 +14,4 @@ git add .;
 git commit -m "automatic update $date";
 git push;
 
-echo "finished $(date)">> /home/pi/list_log.txt
+echo "finished $(date)">> ./log.txt
