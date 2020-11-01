@@ -49,11 +49,10 @@ demo_r_pjangrp <- get_eurostat("demo_r_pjangrp3",
 
 ```
 
-Statistika
 
 * iš JHCSSE iki imtinai `r max(data_world$date)`
 
-# Europa - žemėlapiai
+# Žemėlapiai
 
 ## Užsikrėtimai (/pop.)
 

@@ -41,14 +41,12 @@ data_world <- read.csv("./data/data_world.csv",header = TRUE,stringsAsFactors = 
 
 ```
 
-
-Statistika
 * iš JHCSSE `r max(data_world$date)`
 
-
-# Pasaulis - žemėlapiai
+# Žemėlapiai
 
 ## Užsikrėtimai (/pop.)
+
 ```{r, echo=FALSE}
 df <- data_world %>%
   filter(var=="confirmed",
@@ -117,6 +115,7 @@ ggplot(df, aes(fill=value))+
        y="")
 
 ```
+
 
 # Užsikrėtimai
 

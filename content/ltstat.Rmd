@@ -1,3 +1,11 @@
+---
+title: "Lietuvos statistika"
+author: "Justas Mundeikis"
+date: 2015-07-23T21:13:14-05:00
+categories: ["Lietuva"]
+tags: ["Lietuva", "statisika"]
+---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, collapse = TRUE, error = TRUE, warning = FALSE, message = FALSE)
 ```
