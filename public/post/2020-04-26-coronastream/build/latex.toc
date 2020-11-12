@@ -1,8 +1,0 @@
-\babel@toc {lithuanian}{}
-\beamer@sectionintoc {1}{Apie Corona-Stat.lt}{3}{0}{1}
-\beamer@sectionintoc {2}{Covid situacija}{5}{0}{2}
-\beamer@sectionintoc {3}{Covid pasekm\IeC {\.e}s}{11}{0}{3}
-\beamer@subsectionintoc {3}{1}{Darbo rinka}{11}{0}{3}
-\beamer@subsectionintoc {3}{2}{Kainos, poveikis vartotojams}{14}{0}{3}
-\beamer@subsectionintoc {3}{3}{Pramon\IeC {\.e}, l\IeC {\=u}kes\IeC {\v c}iai ir eksporto rinkos}{18}{0}{3}
-\beamer@subsectionintoc {3}{4}{Naftos rinka ir geopolitika}{23}{0}{3}

@@ -80,9 +80,9 @@ df <- data_lt%>%
 ggplot(df,aes(x=date_confirmation, y=value)) +
   geom_bar(stat='identity',
            fill="steelblue")+
-  geom_text(aes(label=value, y=value), size=3, vjust=-0.75)+
   scale_x_date(breaks = "2 days")+
-      scale_y_continuous(limits = c(0,max(df$value)*1.05))+
+  scale_y_continuous(limits = c(0,max(df$value)*1.15))+
+  geom_text(aes(label=value, y=value), size=3, vjust=0.5, hjust=-0.25,  angle=90)+
   labs(title="Užsikrėtimų skaičius per paskutines 30 dienų",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
        x="Data", 
@@ -110,13 +110,11 @@ test <- data_lt%>%
 df <- left_join(gis_data, test, by="SAV_PAV")%>%
   mutate(percent=round(cases/gyventojai*100000,0))
 
-my_breaks <- c(1,10,25,100,700,1000)
-
 ggplot(df, aes(fill=percent))+
   geom_sf()+
   scale_fill_gradientn(colours=brewer.pal(name ="YlOrRd", n=9),
                        name="Skaičius",
-                       trans="log",
+                       #trans="log",
                        na.value = "grey100")+
   labs(title="Atvejų skaičius tenkantis 100 000 gyventojų per paskutines 7 dienas",
        subtitle = "Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt")
@@ -138,15 +136,15 @@ test <- data_lt%>%
 
 df <- left_join(gis_data, test, by="SAV_PAV")
 
-my_breaks <- c(1,10,25,100,700,1000)
+
 
 ggplot(df, aes(fill=cases))+
   geom_sf()+
   scale_fill_gradientn(colours=brewer.pal(name ="YlOrRd", n=9),
                        name="Skaičius",
-                       trans="log",
+                       #trans="log",
                        na.value = "grey100")+
-  labs(title="Per vakar patvirtintų atvėjų skačius",
+  labs(title="Per vakar patvirtintų atvejų skačius",
        subtitle = "Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt")
 
 ```
@@ -157,6 +155,7 @@ ggplot(df, aes(fill=cases))+
 
 ```{r}
 df <- data_lt%>%
+  mutate(sex=gsub(pattern = "mot.", replacement = "Moteris",data_lt$sex))%>%
   group_by(age_group, sex)%>%
   summarise(value=n())%>%
   na.omit()%>%
@@ -184,6 +183,7 @@ max.date <- max(data_lt$date_confirmation)
 two_weeks <- max.date-7
 
 df <- data_lt%>%
+  mutate(sex=gsub(pattern = "mot.", replacement = "Moteris",data_lt$sex))%>%
   filter(date_confirmation>=two_weeks)%>%
   group_by(age_group, sex)%>%
   summarise(value=n())%>%
