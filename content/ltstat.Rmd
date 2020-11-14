@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo=FALSE, collapse = TRUE, error = TRUE, warning = FALSE
 
 ```{r, include=FALSE}
 source("./scripts/loading_R_packets.R")
-source("./scripts/data_import_GS.R")
+# source("./scripts/data_import_GS.R")
 source("./scripts/data_import_LT.R")
 ```
 
@@ -24,6 +24,9 @@ data_world <- read.csv("./data/data_world.csv",header = TRUE,stringsAsFactors = 
 data_lt <- read.csv("./data/data_lt.csv",header = TRUE,stringsAsFactors = FALSE)%>%
   mutate(date_confirmation=as.Date(date_confirmation),
          date_infection=as.Date(date_infection))
+
+data_lt_test <- read.csv("./data/data_lt_test.csv",header = TRUE,stringsAsFactors = FALSE)%>%
+  mutate(test_performed_date=as.Date(test_performed_date))
 
 # loading shape files
 #source: 
@@ -40,30 +43,6 @@ Statistika
 
 * iš JHCSSE iki imtinai `r max(data_world$date)`
 * iš NVSC iki imtinai `r max(data_lt$date_confirmation)`
-
-## Bendras skaičius
-
-```{r, echo=FALSE}
-df <- data_world %>%
-  filter(CNTR_CODE == "LT")
-
-max.date <- max(df$date)
-
-
-ggplot(df, aes(x=date, y=value, fill=var))+
-  geom_area(alpha=0.5)+
-  scale_fill_manual(values=c("red", "green","black"),
-                    labels=c("Aktyvūs", "Pasveikę", "Mirę"))+
-  scale_x_date(breaks="1 month", date_labels = "%Y-%m")+
-  scale_y_continuous()+
-  labs(title="Atvejų skaičius ir pasiskirstymas",
-       subtitle = "Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt",
-       x="Data",
-       y="Skaičius")+
-  theme(legend.title=element_blank(),
-        legend.position='bottom',
-        axis.text.x = element_text(angle = 45, hjust = 1))
-```
 
 ## Užsikrėtimų skaičius per paskutines 30d
 
@@ -94,7 +73,61 @@ ggplot(df,aes(x=date_confirmation, y=value)) +
 
 ```
 
+## Atvejų ir testų santykis
+
+```{r, echo=FALSE}
+
+df <- data_lt_test %>%
+  select(3,6:10)%>%
+  group_by(test_performed_date)%>%
+  summarise(across(.fns = sum))%>%
+  mutate(share_pos_tot=tests_positive/tests_total,
+         share_pos_new=tests_positive_new/tests_total)
+
+ggplot(df, aes(test_performed_date, group=0))+
+  geom_line(aes(y=share_pos_tot, col="Iš viso (nauji+pakartotiniai)"))+
+  geom_line(aes(y=share_pos_new, col="Nauji"))+
+  scale_x_date(breaks="1 month", date_labels = "%Y-%m")+
+  scale_y_continuous()+
+  scale_color_brewer(palette="Set1")+
+  labs(title="Teigiamų testų dalis nuo visų atiktų testų skaičiaus",
+       subtitle="Šaltinis: osp-sdg.stat.gov.lt, skaičiavimai: Corona-Stat.lt",
+       x="Laikotapris", 
+       y="Procentai")+
+    theme(legend.title=element_blank(),
+        legend.position='bottom',
+        axis.text.x=element_text(angle=45, hjust=1))
+
+
+```
+
+
+## Bendras skaičius
+
+```{r, echo=FALSE}
+df <- data_world %>%
+  filter(CNTR_CODE == "LT")
+
+max.date <- max(df$date)
+
+
+ggplot(df, aes(x=date, y=value, fill=var))+
+  geom_area(alpha=0.5)+
+  scale_fill_manual(values=c("red", "green","black"),
+                    labels=c("Aktyvūs", "Pasveikę", "Mirę"))+
+  scale_x_date(breaks="1 month", date_labels = "%Y-%m")+
+  scale_y_continuous()+
+  labs(title="Atvejų skaičius ir pasiskirstymas",
+       subtitle = "Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt",
+       x="Data",
+       y="Skaičius")+
+  theme(legend.title=element_blank(),
+        legend.position='bottom',
+        axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
 ## Užsikrėtimų skaičius per paskutines 7d / pop
+
 Šiame žemėlapyje matomas santykinis užsikrėtimų skaičius (tenkantis 100 000 gyventojų). Duomenys pateikiami savivavlybių lygiu. 
 
 ```{r}

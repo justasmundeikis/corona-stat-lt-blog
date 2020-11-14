@@ -1,3 +1,4 @@
+## importing NVSC data (case-data)
 data_import <- readLines("ftp://atviriduomenys.nvsc.lt/COVID19.json")
 data_lt <- fromJSON(data_import, flatten = TRUE)%>%
         rename(date_infection=`Susirgimo data`,
@@ -23,5 +24,13 @@ data_lt$sex[data_lt$sex==""] <- NA
 
 # writing csv
 write.csv(data_lt, "./data/data_lt.csv", row.names = FALSE)
+
+
+## importing testing data
+data_lt_test <- read.csv("https://opendata.arcgis.com/datasets/538b7bd574594daa86fefd16509cbc36_0.csv")
+
+# writing csv
+write.csv(data_lt_test, "./data/data_lt_test.csv", row.names = FALSE)
+
 
 rm(list = ls())
