@@ -72,6 +72,34 @@ ggplot(df,aes(x=date_confirmation, y=value)) +
 
 
 ```
+## Tyrimų skaičius
+
+```{r, echo=FALSE}
+max.date <- max(data_lt$date_confirmation)
+two_weeks <- max.date-14
+
+df <- data_lt_test %>%
+  select(3,7,10)%>%
+  filter(test_performed_date>=two_weeks)%>%
+  group_by(test_performed_date)%>%
+  summarise(across(.fns = sum))
+
+ggplot(df, aes(test_performed_date, tests_positive_new))+
+  geom_line()+
+    geom_point()+
+    scale_x_date(breaks="1 day", date_labels = "%Y-%m-%d-%A")+
+  scale_y_continuous()+
+  scale_color_brewer(palette="Set1")+
+  labs(title="Atliktų testų skaičius paskutines 14 dienų",
+       subtitle="Šaltinis: osp-sdg.stat.gov.lt, skaičiavimai: Corona-Stat.lt",
+       x="Laikotapris", 
+       y="Skaičius")+
+    theme(legend.title=element_blank(),
+        legend.position='bottom',
+        axis.text.x=element_text(angle=45, hjust=1))
+
+
+```
 
 ## Atvejų ir testų santykis
 
