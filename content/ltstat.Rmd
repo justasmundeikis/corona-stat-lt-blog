@@ -79,12 +79,12 @@ max.date <- max(data_lt$date_confirmation)
 two_weeks <- max.date-14
 
 df <- data_lt_test %>%
-  select(3,7,10)%>%
+  select(3,6)%>%
   filter(test_performed_date>=two_weeks)%>%
   group_by(test_performed_date)%>%
   summarise(across(.fns = sum))
 
-ggplot(df, aes(test_performed_date, tests_positive_new))+
+ggplot(df, aes(test_performed_date, tests_total))+
   geom_line()+
     geom_point()+
     scale_x_date(breaks="1 day", date_labels = "%Y-%m-%d-%A")+
