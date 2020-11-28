@@ -72,6 +72,7 @@ ggplot(df,aes(x=date_confirmation, y=value)) +
 
 
 ```
+
 ## Tyrimų skaičius
 
 ```{r, echo=FALSE}
