@@ -110,8 +110,8 @@ df <- data_lt_test %>%
   select(3,6:10)%>%
   group_by(test_performed_date)%>%
   summarise(across(.fns = sum))%>%
-  mutate(share_pos_tot=tests_positive/tests_total,
-         share_pos_new=tests_positive_new/tests_total)
+  mutate(share_pos_tot=tests_positive/tests_total*100,
+         share_pos_new=tests_positive_new/tests_total*100)
 
 ggplot(df, aes(test_performed_date, group=0))+
   geom_line(aes(y=share_pos_tot, col="Iš viso (nauji+pakartotiniai)"))+
