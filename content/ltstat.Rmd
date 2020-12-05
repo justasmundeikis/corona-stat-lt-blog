@@ -64,8 +64,8 @@ ggplot(df,aes(x=date_confirmation, y=value)) +
   geom_text(aes(label=value, y=value), size=3, vjust=0.5, hjust=-0.25,  angle=90)+
   labs(title="Užsikrėtimų skaičius per paskutines 30 dienų",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
-       x="Data", 
-       y="Užsikrėtimų skaičius")+
+       x="Laikotapris", 
+       y="Skaičius")+
   theme(legend.title=element_blank(),
         legend.position='none',
         axis.text.x=element_text(angle=45, hjust=1))
@@ -148,7 +148,7 @@ ggplot(df, aes(x=date, y=value, fill=var))+
   scale_y_continuous()+
   labs(title="Atvejų skaičius ir pasiskirstymas",
        subtitle = "Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt",
-       x="Data",
+       x="Laikotarpis",
        y="Skaičius")+
   theme(legend.title=element_blank(),
         legend.position='bottom',
@@ -232,7 +232,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
   labs(title="Užsikrėtimai pagal amžiaus kategorijas",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
        x="Amžiaus grupė", 
-       y="Užsikrėtimų skaičius")+
+       y="Skaičius")+
   theme(legend.title=element_blank(),
         legend.position='bottom',
         axis.text.x=element_text(angle=45, hjust=1))
@@ -261,7 +261,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
   labs(title="Užsikrėtimai pagal amžiaus kategorijas, paskutinės 7d.",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
        x="Amžiaus grupė", 
-       y="Užsikrėtimų skaičius")+
+       y="Skaičius")+
   theme(legend.title=element_blank(),
         legend.position='bottom',
         axis.text.x=element_text(angle=45, hjust=1))
@@ -286,7 +286,7 @@ ggplot(df, aes(age_group,value, fill=sex))+
   labs(title="Mirusieji pagal amžiaus kategorijas",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
        x="Amžiaus grupė", 
-       y="Mirusiųjų skaičius")+
+       y="Skaičius")+
   theme(legend.title=element_blank(),
         legend.position='bottom',
         axis.text.x=element_text(angle=45, hjust=1))
@@ -312,7 +312,7 @@ ggplot(df, aes(age_group,value))+
   labs(title="Mirusieji pagal amžiaus kategorijas, ar turėjo chroninių ligų",
        subtitle="Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt",
        x="Amžiaus grupė", 
-       y="Mirusiųjų skaičius")+
+       y="Skaičius")+
   theme(legend.title=element_blank(),
         legend.position='bottom',
         axis.text.x=element_text(angle=45, hjust=1))+
