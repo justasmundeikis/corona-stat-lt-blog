@@ -50,7 +50,9 @@ data_world <- read.csv("./data/data_world.csv",header = TRUE,stringsAsFactors = 
 ```{r, echo=FALSE}
 df <- data_world %>%
   filter(var=="confirmed",
-         date==max(date))
+         date==max(date)-14 | date==max(date) )%>%
+  spread(date, value)%>%
+  mutate(value=.[,6]-.[,5])
 
 max.date <- max(df$date)
 
@@ -58,23 +60,17 @@ df <- left_join(shape, df, by=c("SOVEREIGNT"="country"))%>%
   mutate(POP_EST=as.numeric(POP_EST))%>%
   mutate(value_pop=value/POP_EST*100000)
 
-# summary(df$value_pop)
-# min(df$value_pop,na.rm = T)
-# max(df$value_pop,na.rm = T)
-
-my_breaks <- c(1,10,100,1000,10000,100000)
-
 ggplot(df, aes(fill=value_pop))+
   geom_sf()+
   ylim(-55,80)+
   xlim(-130,140)+
   scale_fill_gradientn(colours=brewer.pal(name ="YlOrRd", n=9),
+                       #breaks=my_breaks,
+                       #labels=my_breaks,
                        name="Skaičius",
-                       trans="log",
-                       na.value = "grey100",
-                       breaks=my_breaks,
-                       labels=my_breaks)+
-  labs(title="Atvejų skaičius tenkantis 100 000 gyventojų",
+                       #trans="log",
+                       na.value = "grey100")+
+  labs(title="Atvejų skaičius tenkantis 100 000 gyventojų per paskutines 14d.",
        subtitle = "Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt")
 ```
 
@@ -196,12 +192,12 @@ ggplot(df, aes(x=date, y=value, color=valstybe, group=valstybe)) +
 ```
 
 
-## Užsikrėtimai (abs, 7d)
+## Užsikrėtimai (abs, 14d.)
 
 ```{r, echo=FALSE}
 df <- data_world %>%
   filter(var=="confirmed",
-         date==max(date)-7 | date==max(date),
+         date==max(date)-14 | date==max(date),
          value>=50)%>%
   spread(date, value)%>%
   mutate(diff=round((.[,6]-.[,5])/1000,1))%>%
@@ -224,12 +220,12 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
 
 ```
 
-## Užsikrėtimai (proc, 7d)
+## Užsikrėtimai (proc, 14d.)
 
 ```{r, echo=FALSE}
 df <- data_world %>%
   filter(var=="confirmed",
-         date==max(date)-7 | date==max(date),
+         date==max(date)-14 | date==max(date),
          value>=50)%>%
   spread(date, value)%>%
   mutate(diff=round((.[,6]/.[,5]-1)*100,1))%>%
@@ -244,7 +240,7 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
   geom_text(aes(label=value, y=value), size=3, vjust=0.5, hjust=-0.25,  angle=90)+
   labs(x="Valstybė", 
        y="Užsikrėtimų skaičius", 
-       title="Naujų atvejų skaičius pokytis paskutines 7 dienas",
+       title="Naujų atvejų skaičius pokytis paskutines 14 dienų",
        subtitle="Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt" )+
   theme(legend.title=element_blank(),
         legend.position='none',
@@ -252,7 +248,7 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
 
 ```
 
-## Užsikrėtimai (/pop, 7d)
+## Užsikrėtimai (/pop, 14d.)
 ```{r, echo=FALSE}
 pop_world <- data.frame(SOVEREIGNT=shape$SOVEREIGNT, POP_EST=shape$POP_EST, stringsAsFactors = FALSE)%>%
   rename(country=SOVEREIGNT,
@@ -260,7 +256,7 @@ pop_world <- data.frame(SOVEREIGNT=shape$SOVEREIGNT, POP_EST=shape$POP_EST, stri
 
 df <- data_world %>%
   filter(var=="confirmed",
-         date==max(date)-7 | date==max(date),
+         date==max(date)-14 | date==max(date),
          value>=50)%>%
   spread(date, value)%>%
   mutate(diff=(.[,6]-.[,5]))%>%
@@ -277,7 +273,7 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
   geom_text(aes(label=value, y=value), size=3, vjust=0.5, hjust=-0.25,  angle=90)+
   labs(x="Valstybė", 
        y="Užsikrėtimų skaičius", 
-       title="Naujų atvejų skaičius pokytis paskutines 7 dienas / 100 000 gyv.",
+       title="Naujų atvejų skaičius pokytis paskutines 14 dienų / 100 000 gyv.",
        subtitle="Šaltinis: JHCSSE, Skaičiavimai: Corona-Stat.lt" )+
   theme(legend.title=element_blank(),
         legend.position='none',
@@ -315,12 +311,12 @@ labs(title="Naujų užsikrėtimų skaičius top9 viso",
 
 # Mirtys
 
-## Mirtys (abs, 7d)
+## Mirtys (abs, 14d.)
 
 ```{r, echo=FALSE}
 df <- data_world %>%
   filter(var=="deaths",
-         date==max(date)-7 | date==max(date) )%>%
+         date==max(date)-14 | date==max(date) )%>%
   spread(date, value)%>%
   mutate(diff=.[,6]-.[,5])%>%
   select(3,7)%>%
@@ -334,7 +330,7 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
   geom_text(aes(label=value, y=value), size=3, vjust=0.5, hjust=-0.25,  angle=90)+
   labs(x="Valstybė", 
        y="Mirčių skaičius", 
-       title="Mirčių skaičius, top 20 valstybių per paskutines 7d",
+       title="Mirčių skaičius, top 20 valstybių per paskutines 14d.",
        subtitle="Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt" )+
   theme(legend.title=element_blank(),
         legend.position='none',
@@ -342,12 +338,12 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
 
 ```
 
-## Mirtys (proc, 7d)
+## Mirtys (proc, 14d.)
 
 ```{r, echo=FALSE}
 df <- data_world %>%
   filter(var=="deaths",
-         date==max(date)-7 | date==max(date),
+         date==max(date)-14 | date==max(date),
          value>=50)%>%
   spread(date, value)%>%
   mutate(diff=round((.[,6]/.[,5]-1)*100,1))%>%
@@ -362,7 +358,7 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
   geom_text(aes(label=value, y=value), size=3, vjust=0.5, hjust=-0.25,  angle=90)+
   labs(x="Valstybė", 
        y="Mirčių skaičius", 
-       title="Mirčių skaičius pokytis (%) per 7d",
+       title="Mirčių skaičius pokytis (%) per 14d.",
        subtitle="Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt")+
   theme(legend.title=element_blank(),
         legend.position='none',
@@ -370,7 +366,7 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
 
 ```
 
-## Mirtys (/pop, 7d.)
+## Mirtys (/pop, 14d..)
 
 ```{r, echo=FALSE}
 
@@ -378,7 +374,7 @@ pop_world <- data.frame(SOVEREIGNT=shape$SOVEREIGNT, POP_EST=shape$POP_EST, stri
 
 df <- data_world %>%
   filter(var=="deaths",
-         date==max(date)-7 | date==max(date),
+         date==max(date)-14 | date==max(date),
          value>=50)%>%
     spread(date, value)%>%
   mutate(diff=(.[,6]-.[,5]))%>%
@@ -395,8 +391,8 @@ ggplot(df,aes(x=reorder(valstybe,-value), y=value)) +
   geom_text(aes(label=value, y=value), size=3, vjust=0.5, hjust=-0.25,  angle=90)+
   labs(x="Valstybė", 
        y="Mirčių skaičius", 
-       title=paste0("Mirčių skaičius tenkantis 100 000 gyventojų ( ", max.date, " duomenimis)"),
-       subtitle="Šaltinis: JHCSSE, Skaičiavimai: Corona-Stat.lt" )+
+       title="Mirčių skaičius tenkantis 100 000 gyventojų per paskutines 14 dienų",
+       subtitle="Šaltinis: JHCSSE, Skaičiavimai: Corona-Stat.lt")+
   theme(legend.title=element_blank(),
         legend.position='none',
         axis.text.x=element_text(angle=45, hjust=1))
@@ -410,7 +406,7 @@ Atrinktos šalyse su mirčių skaičiumi >50.
 ```{r,echo=FALSE}
 df <- data_world %>%
   filter(var%in%c("deaths","confirmed"),
-         date==max(date)-7 | date==max(date),
+         date==max(date)-14 | date==max(date),
          value>=50)%>%
   spread(date,value)%>%
   mutate(diff=.[,6]-.[,5])%>%
