@@ -318,3 +318,86 @@ ggplot(df, aes(age_group,value))+
         axis.text.x=element_text(angle=45, hjust=1))+
   facet_wrap(~has_chronic)
 ```
+
+
+# Mobilumo duomenys
+
+## Apple mobilumo duomenys
+
+```{r}
+date <- Sys.Date()-1
+url <- paste0("https://covid19-static.cdn-apple.com/covid19-mobility-data/2023HotfixDev15/v3/en-us/applemobilitytrends-",date,".csv")
+apple_mob <- read.csv(url)
+
+
+apple_mob_df <-apple_mob %>%
+  filter(region=="Lithuania")%>%
+  select(2,3,7:ncol(.))%>%
+  gather(date, values, -c(1,2))%>%
+  mutate(date=date %>%substr(2,11) %>% ymd())%>%
+  mutate(weeknr=isoweek(date))%>%
+  rename(var=transportation_type)
+
+ggplot(apple_mob_df, aes(date, values, col=var))+
+  geom_line()+
+  scale_x_date(breaks="1 month", date_labels = "%Y-%m")+
+  scale_y_continuous()+
+  scale_color_brewer(palette="Set1")+
+  labs(title="Apple mobilumo duomenys, indeksas",
+       subtitle="Šaltinis: covid19.apple.com/mobility, skaičiavimai: Corona-Stat.lt",
+       x="Laikotapris", 
+       y="Indeksas 2020-01-13 = 100")+
+    theme(legend.title=element_blank(),
+        legend.position='bottom',
+        axis.text.x=element_text(angle=45, hjust=1))
+```
+
+
+
+## Apple mobilumo duomenys
+```{r}
+
+ggplot(apple_mob_df%>%filter(date>="2020-11-30"), aes(date, values, col=var))+
+  geom_line()+
+  geom_point()+
+  scale_x_date(breaks="2 day", date_labels = "%Y-%m-%d")+
+  scale_y_continuous()+
+  scale_color_brewer(palette="Set1")+
+  geom_vline(xintercept = as.numeric(as.Date("2020-12-16")), linetype=1)+
+  annotate("text", label = "Judėjimo tarp \nsav. ribojimas", x = as.Date("2020-12-18"),y=100, size = 4, colour = "red")+
+  labs(title="Apple mobilumo duomenys, indeksas",
+       subtitle="Šaltinis: covid19.apple.com/mobility, skaičiavimai: Corona-Stat.lt",
+       x="Laikotapris", 
+       y="Indeksas 2020-01-13 = 100")+
+    theme(legend.title=element_blank(),
+        legend.position='bottom',
+        axis.text.x=element_text(angle=45, hjust=1))
+```
+
+
+## Savaitinis mobilumas (vidurkiai)
+
+```{r}
+max.date <- max(apple_mob_df$date)
+period <- max.date-60
+
+apple_mob_last <-apple_mob_df %>%
+  filter(date>="2020-11-02")%>%
+  group_by(var, weeknr)%>%
+  summarise(mean=round(mean(values),1))
+
+ggplot(apple_mob_last, aes(weeknr, mean, fill=var))+
+  geom_bar(stat="identity",
+           position="dodge")+
+  scale_x_continuous(breaks = 1:53)+
+  scale_y_continuous(limits = c(0,max(apple_mob_last$mean)*1.15))+
+  scale_color_brewer(palette="Set1")+
+  labs(title="Apple mobilumo duomenys, indeksas, nuo 2020m lapkričio",
+       subtitle="Šaltinis: covid19.apple.com/mobility, skaičiavimai: Corona-Stat.lt",
+       x="Savaitė", 
+       y="Indeksas 2020-01-13 = 100")+
+  theme(legend.title=element_blank(),
+        legend.position='none',
+        axis.text.x=element_text(angle=45, hjust=1))+
+  geom_text(aes(label=mean, y=mean), size=3, vjust=0.5, hjust=-0.25,  angle=90, position = position_dodge(width = 1))
+```
