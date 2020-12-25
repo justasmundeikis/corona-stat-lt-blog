@@ -326,7 +326,7 @@ ggplot(df, aes(age_group,value))+
 
 ```{r}
 date <- Sys.Date()-2
-url <- paste0("https://covid19-static.cdn-apple.com/covid19-mobility-data/2023HotfixDev15/v3/en-us/applemobilitytrends-",date,".csv")
+url <- paste0("https://covid19-static.cdn-apple.com/covid19-mobility-data/2023HotfixDev17/v3/en-us/applemobilitytrends-",date,".csv")
 apple_mob <- read.csv(url)
 
 
