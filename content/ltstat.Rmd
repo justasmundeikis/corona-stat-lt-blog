@@ -325,7 +325,7 @@ ggplot(df, aes(age_group,value))+
 ## Apple mobilumo duomenys
 
 ```{r}
-date <- Sys.Date()-1
+date <- Sys.Date()-2
 url <- paste0("https://covid19-static.cdn-apple.com/covid19-mobility-data/2023HotfixDev15/v3/en-us/applemobilitytrends-",date,".csv")
 apple_mob <- read.csv(url)
 
