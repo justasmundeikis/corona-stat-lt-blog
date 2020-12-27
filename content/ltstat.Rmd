@@ -132,9 +132,10 @@ ggplot(df, aes(test_performed_date, group=0))+
 
 ## Taigimų testų vs patvirtintų atvejų skaičius
 
-Įprastai VLK pateikiamas **atliktų testų** ir juose nustatytų **teigiamų** ir **naujų teigiamų** COVID19 atvejų skaičius ir NVSC pateikiamas **patvirtintų atvejų skaičius** reikšmingai nesiskiria. Tačiau kartais, šioje vietoje preziumuoju, kai NVSC nespėja patvirtinti, sukaupia back-log'ą, o testų būna atliekama mažiau, NVSC pasiveja, šie skaičiai gali reikšmingai išsiskirti, kaip tai įvyko 2020-12-25. 
+Įprastai NVSC pateikiamas **atliktų testų** ir juose nustatytų **teigiamų** ir **naujų teigiamų** COVID19 atvejų skaičius ir NVSC pateikiamas **patvirtintų atvejų skaičius** reikšmingai nesiskiria. Tačiau kartais, šioje vietoje preziumuoju, kai NVSC nespėja patvirtinti, sukaupia back-log'ą, o testų būna atliekama mažiau, NVSC pasiveja, šie skaičiai gali reikšmingai išsiskirti, kaip tai įvyko 2020-12-25. 
 
-Dėl šių aplinkybių gali labai reikšmingai skirtis teigiamų atvejų ir atliktų testų skaičius. Remiantis tik VLK testų duomenimis 2020-12-25 teigiamų testų ir atliktų testų santykis siekė 29.7%, tuo tarpu klaidingai skaičiuojant NVSC patvirtintų atvejų santykį su atliktų testų skaičiumi (kaip tai daro arba galbūt jau darė? [Statistikos departamentas](https://osp.maps.arcgis.com/apps/MapSeries/index.html?appid=c6bc9659a00449239eb3bde062d23caa)), toks rodiklis siekė  net 48.1%.
+Dėl šių aplinkybių gali labai reikšmingai skirtis teigiamų atvejų ir atliktų testų skaičius. Remiantis tik atliktų testų duomenimis 2020-12-25 teigiamų testų ir atliktų testų santykis siekė 29.7%, tuo tarpu klaidingai skaičiuojant NVSC patvirtintų atvejų santykį su atliktų testų skaičiumi (kaip tai daro arba galbūt jau darė? [Statistikos departamentas](https://osp.maps.arcgis.com/apps/MapSeries/index.html?appid=c6bc9659a00449239eb3bde062d23caa)), toks rodiklis siekė  net 48.1%.
+
 
 ```{r}
 
@@ -198,13 +199,13 @@ ggplot(df, aes(x=date, y=value, fill=var))+
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-## Užsikrėtimų skaičius per paskutines 7d / pop
+## Užsikrėtimų skaičius per paskutines 14d. / pop
 
 Šiame žemėlapyje matomas santykinis užsikrėtimų skaičius (tenkantis 100 000 gyventojų). Duomenys pateikiami savivavlybių lygiu. 
 
 ```{r}
 max.date <- max(data_lt$date_confirmation)
-two_weeks <- max.date-7
+two_weeks <- max.date-14
 
 test <- data_lt%>%
   filter(date_confirmation>=two_weeks)%>%
