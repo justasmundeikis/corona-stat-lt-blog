@@ -130,6 +130,49 @@ ggplot(df, aes(test_performed_date, group=0))+
 
 ```
 
+## Taigimų testų vs patvirtintų atvejų skaičius
+
+Įprastai VLK pateikiamas **atliktų testų** ir juose nustatytų **teigiamų** ir **naujų teigiamų** COVID19 atvejų skaičius ir NVSC pateikiamas **patvirtintų atvejų skaičius** reikšmingai nesiskiria. Tačiau kartais, šioje vietoje preziumuoju, kai NVSC nespėja patvirtinti, sukaupia back-log'ą, o testų būna atliekama mažiau, NVSC pasiveja, šie skaičiai gali reikšmingai išsiskirti, kaip tai įvyko 2020-12-25. 
+
+Dėl šių aplinkybių gali labai reikšmingai skirtis teigiamų atvejų ir atliktų testų skaičius. Remiantis tik VLK testų duomenimis 2020-12-25 teigiamų testų ir atliktų testų santykis siekė 29.7%, tuo tarpu klaidingai skaičiuojant NVSC patvirtintų atvejų santykį su atliktų testų skaičiumi (kaip tai daro arba galbūt jau darė? [Statistikos departamentas](https://osp.maps.arcgis.com/apps/MapSeries/index.html?appid=c6bc9659a00449239eb3bde062d23caa)), toks rodiklis siekė  net 48.1%.
+
+```{r}
+
+max.date <- max(data_lt$date_confirmation)
+two_weeks <- max.date-14
+
+df_test <- data_lt_test %>%
+  select(3,6:10)%>%
+  group_by(test_performed_date)%>%
+  summarise(across(.fns = sum))%>%
+  select(1,4,5)
+
+
+df_conf <- data_lt%>%
+  group_by(date_confirmation)%>%
+  count(date_confirmation)%>%
+  rename(confirmed_NVSC=n)
+
+df <- merge(df_test, df_conf, by.x="test_performed_date", by.y="date_confirmation")%>%
+  gather(var, values, 2:4)%>%
+  filter(test_performed_date>=two_weeks)
+
+ggplot(df, aes(test_performed_date, values, col=var))+
+geom_point()+
+  geom_line()+
+  scale_x_date(breaks="1 day", date_labels = "%Y-%m-%d %a")+
+  scale_y_continuous(limits=c(0,max(df$values)*1.15))+
+  scale_color_brewer(palette="Set1")+
+  labs(title="Teigiamų testų ir NVSC patvirtintų atvejų skaičius",
+       subtitle="Šaltinis: osp-sdg.stat.gov.lt, skaičiavimai: Corona-Stat.lt",
+       x="Laikotapris", 
+       y="Skaičius")+
+    theme(legend.title=element_blank(),
+        legend.position='bottom',
+        axis.text.x=element_text(angle=45, hjust=1))
+
+
+```
 
 ## Bendras skaičius
 
