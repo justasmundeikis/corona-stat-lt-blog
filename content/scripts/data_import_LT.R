@@ -27,7 +27,13 @@ write.csv(data_lt, "./data/data_lt.csv", row.names = FALSE)
 
 
 ## importing testing data
-data_lt_test <- read.csv("https://opendata.arcgis.com/datasets/538b7bd574594daa86fefd16509cbc36_0.csv")
+#### data_lt_test <- read.csv("https://opendata.arcgis.com/datasets/538b7bd574594daa86fefd16509cbc36_0.csv")
+data_import <- readLines("https://opendata.arcgis.com/datasets/07dce7d43ba04a5b93abbbbe1d20d9ea_0.geojson")
+data_import <- fromJSON(data_import, flatten = TRUE)
+data_lt_test <- as.data.frame(data_import$features)%>%
+        select(2:12)
+names(data_lt_test)<- gsub("\\properties.", "", names(data_lt_test))
+data_lt_test$test_performed_date <- as.Date(data_lt_test$test_performed_date)
 
 # writing csv
 write.csv(data_lt_test, "./data/data_lt_test.csv", row.names = FALSE)

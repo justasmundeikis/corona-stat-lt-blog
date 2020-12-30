@@ -80,7 +80,7 @@ max.date <- max(data_lt$date_confirmation)
 two_weeks <- max.date-14
 
 df <- data_lt_test %>%
-  select(3,6)%>%
+  select(1,4)%>%
   filter(test_performed_date>=two_weeks)%>%
   group_by(test_performed_date)%>%
   summarise(across(.fns = sum))
@@ -107,7 +107,7 @@ ggplot(df, aes(test_performed_date, tests_total))+
 ```{r, echo=FALSE}
 
 df <- data_lt_test %>%
-  select(3,6:10)%>%
+  select(1,4:11)%>%
   group_by(test_performed_date)%>%
   summarise(across(.fns = sum))%>%
   mutate(share_pos_tot=tests_positive/tests_total*100,
@@ -143,7 +143,7 @@ max.date <- max(data_lt$date_confirmation)
 two_weeks <- max.date-14
 
 df_test <- data_lt_test %>%
-  select(3,6:10)%>%
+  select(1,4:11)%>%
   group_by(test_performed_date)%>%
   summarise(across(.fns = sum))%>%
   select(1,4,5)
@@ -222,7 +222,7 @@ ggplot(df, aes(fill=percent))+
                        name="Skaičius",
                        #trans="log",
                        na.value = "grey100")+
-  labs(title="Atvejų skaičius tenkantis 100 000 gyventojų per paskutines 7 dienas",
+  labs(title="Atvejų skaičius tenkantis 100 000 gyventojų per paskutines 14 dienų",
        subtitle = "Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt")
 
 ```
@@ -370,7 +370,7 @@ ggplot(df, aes(age_group,value))+
 
 ```{r}
 date <- Sys.Date()-2
-url <- paste0("https://covid19-static.cdn-apple.com/covid19-mobility-data/2023HotfixDev21/v3/en-us/applemobilitytrends-",date,".csv")
+url <- paste0("https://covid19-static.cdn-apple.com/covid19-mobility-data/2023HotfixDev22/v3/en-us/applemobilitytrends-",date,".csv")
 apple_mob <- read.csv(url)
 
 
