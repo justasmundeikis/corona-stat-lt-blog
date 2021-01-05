@@ -130,7 +130,7 @@ ggplot(df, aes(test_performed_date, group=0))+
 
 ```
 
-## Taigimų testų vs patvirtintų atvejų skaičius
+## Teigiamų testų vs patvirtintų atvejų skaičius
 
 Įprastai NVSC pateikiamas **atliktų testų** ir juose nustatytų **teigiamų** ir **naujų teigiamų** COVID19 atvejų skaičius ir NVSC pateikiamas **patvirtintų atvejų skaičius** reikšmingai nesiskiria. Tačiau kartais, šioje vietoje preziumuoju, kai NVSC nespėja patvirtinti, sukaupia back-log'ą, o testų būna atliekama mažiau, NVSC pasiveja, šie skaičiai gali reikšmingai išsiskirti, kaip tai įvyko 2020-12-25. 
 
@@ -370,7 +370,7 @@ ggplot(df, aes(age_group,value))+
 
 ```{r}
 date <- Sys.Date()-2
-url <- paste0("https://covid19-static.cdn-apple.com/covid19-mobility-data/2023HotfixDev27/v3/en-us/applemobilitytrends-",date,".csv")
+url <- paste0("https://covid19-static.cdn-apple.com/covid19-mobility-data/2023HotfixDev28/v3/en-us/applemobilitytrends-",date,".csv")
 apple_mob <- read.csv(url)
 
 
