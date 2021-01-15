@@ -28,13 +28,6 @@ data_lt <- read.csv("./data/data_lt.csv",header = TRUE,stringsAsFactors = FALSE)
 data_lt_test <- read.csv("./data/data_lt_test.csv",header = TRUE,stringsAsFactors = FALSE)%>%
   mutate(test_performed_date=as.Date(test_performed_date))
 
-# loading shape files
-#source: 
-gis_data <- st_read(dsn = "./shape_files/bandomasis surasymas.gdb/a0000000a.gdbtable")%>%
-  select(SAV_KODAS, SAV_PAV,Is_viso,Shape)%>% 
-  group_by(SAV_PAV)%>%
-  summarise(gyventojai=sum(Is_viso))%>%
-  mutate(SAV_PAV=gsub(" sav.", "", SAV_PAV))
 ```
 
 # Statistika
@@ -130,6 +123,40 @@ ggplot(df, aes(test_performed_date, group=0))+
 
 ```
 
+## Atvejų ir testų santykis 30d.
+
+```{r, echo=FALSE}
+max.date <- max(data_lt$date_confirmation)
+two_weeks <- max.date-30
+
+
+df <- data_lt_test %>%
+  select(1,4:11)%>%
+  filter(test_performed_date>=two_weeks)%>%
+  group_by(test_performed_date)%>%
+  summarise(across(.fns = sum))%>%
+  mutate(share_pos_tot=tests_positive/tests_total*100,
+         share_pos_new=tests_positive_new/tests_total*100)
+
+ggplot(df, aes(test_performed_date, group=0))+
+  geom_line(aes(y=share_pos_tot, col="Iš viso (nauji+pakartotiniai)"))+
+  geom_line(aes(y=share_pos_new, col="Nauji"))+
+  geom_point(aes(y=share_pos_tot, col="Iš viso (nauji+pakartotiniai)"))+
+  geom_point(aes(y=share_pos_new, col="Nauji"))+
+  scale_x_date(breaks="1 week", date_labels = "%Y-%m-%d")+
+  scale_y_continuous()+
+  scale_color_brewer(palette="Set1")+
+  labs(title="Teigiamų testų dalis nuo visų atiktų testų skaičiaus",
+       subtitle="Šaltinis: osp-sdg.stat.gov.lt, skaičiavimai: Corona-Stat.lt",
+       x="Laikotapris", 
+       y="Procentai")+
+    theme(legend.title=element_blank(),
+        legend.position='bottom',
+        axis.text.x=element_text(angle=45, hjust=1))
+
+
+```
+
 ## Teigiamų testų vs patvirtintų atvejų skaičius
 
 Įprastai NVSC pateikiamas **atliktų testų** ir juose nustatytų **teigiamų** ir **naujų teigiamų** COVID19 atvejų skaičius ir NVSC pateikiamas **patvirtintų atvejų skaičius** reikšmingai nesiskiria. Tačiau kartais, šioje vietoje preziumuoju, kai NVSC nespėja patvirtinti, sukaupia back-log'ą, o testų būna atliekama mažiau, NVSC pasiveja, šie skaičiai gali reikšmingai išsiskirti, kaip tai įvyko 2020-12-25. 
@@ -175,85 +202,6 @@ geom_point()+
 
 ```
 
-## Bendras skaičius
-
-```{r, echo=FALSE}
-df <- data_world %>%
-  filter(CNTR_CODE == "LT")
-
-max.date <- max(df$date)
-
-
-ggplot(df, aes(x=date, y=value, fill=var))+
-  geom_area(alpha=0.5)+
-  scale_fill_manual(values=c("red", "green","black"),
-                    labels=c("Aktyvūs", "Pasveikę", "Mirę"))+
-  scale_x_date(breaks="1 month", date_labels = "%Y-%m")+
-  scale_y_continuous()+
-  labs(title="Atvejų skaičius ir pasiskirstymas",
-       subtitle = "Šaltinis: JHCSSE, skaičiavimai: Corona-Stat.lt",
-       x="Laikotarpis",
-       y="Skaičius")+
-  theme(legend.title=element_blank(),
-        legend.position='bottom',
-        axis.text.x = element_text(angle = 45, hjust = 1))
-```
-
-## Užsikrėtimų skaičius per paskutines 14d. / pop
-
-Šiame žemėlapyje matomas santykinis užsikrėtimų skaičius (tenkantis 100 000 gyventojų). Duomenys pateikiami savivavlybių lygiu. 
-
-```{r}
-max.date <- max(data_lt$date_confirmation)
-two_weeks <- max.date-14
-
-test <- data_lt%>%
-  filter(date_confirmation>=two_weeks)%>%
-  group_by(county)%>%
-  summarise(cases=n())%>%
-  rename(SAV_PAV=county)
-
-df <- left_join(gis_data, test, by="SAV_PAV")%>%
-  mutate(percent=round(cases/gyventojai*100000,0))
-
-ggplot(df, aes(fill=percent))+
-  geom_sf()+
-  scale_fill_gradientn(colours=brewer.pal(name ="YlOrRd", n=9),
-                       name="Skaičius",
-                       #trans="log",
-                       na.value = "grey100")+
-  labs(title="Atvejų skaičius tenkantis 100 000 gyventojų per paskutines 14 dienų",
-       subtitle = "Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt")
-
-```
-
-## Vakar dienos atvejų skaičius
-
-Šis žemėlapis parodo šiuo metu aktyviausius COVID19 židinius. Skaičiai yra absoliutūs, ne santykiniai.
-
-```{r}
-max.date <- max(data_lt$date_confirmation)
-
-test <- data_lt%>%
-  filter(date_confirmation>=max.date)%>%
-  group_by(county)%>%
-  summarise(cases=n())%>%
-  rename(SAV_PAV=county)
-
-df <- left_join(gis_data, test, by="SAV_PAV")
-
-
-
-ggplot(df, aes(fill=cases))+
-  geom_sf()+
-  scale_fill_gradientn(colours=brewer.pal(name ="YlOrRd", n=9),
-                       name="Skaičius",
-                       #trans="log",
-                       na.value = "grey100")+
-  labs(title="Per vakar patvirtintų atvejų skačius",
-       subtitle = "Šaltinis: NVSC, skaičiavimai: Corona-Stat.lt")
-
-```
 
 
 ## Užsikrėtimai pagal amžių
@@ -282,11 +230,11 @@ ggplot(df, aes(age_group,value, fill=sex))+
         axis.text.x=element_text(angle=45, hjust=1))
 ```
 
-## Užsikrėtimai pagal amžių per paskutines 7d.
+## Užsikrėtimai pagal amžių per paskutines 14d.
 
 ```{r}
 max.date <- max(data_lt$date_confirmation)
-two_weeks <- max.date-7
+two_weeks <- max.date-14
 
 df <- data_lt%>%
   mutate(sex=gsub(pattern = "mot.", replacement = "Moteris",data_lt$sex))%>%
@@ -370,7 +318,7 @@ ggplot(df, aes(age_group,value))+
 
 ```{r}
 date <- Sys.Date()-2
-url <- paste0("https://covid19-static.cdn-apple.com/covid19-mobility-data/2024HotfixDev14/v3/en-us/applemobilitytrends-",date,".csv")
+url <- paste0("https://covid19-static.cdn-apple.com/covid19-mobility-data/2024HotfixDev15/v3/en-us/applemobilitytrends-",date,".csv")
 apple_mob <- read.csv(url)
 
 
@@ -387,6 +335,7 @@ ggplot(apple_mob_df, aes(date, values, col=var))+
   scale_x_date(breaks="1 month", date_labels = "%Y-%m")+
   scale_y_continuous()+
   scale_color_brewer(palette="Set1")+
+        geom_hline(yintercept = 100)+
   labs(title="Apple mobilumo duomenys, indeksas",
        subtitle="Šaltinis: covid19.apple.com/mobility, skaičiavimai: Corona-Stat.lt",
        x="Laikotapris", 
@@ -416,32 +365,4 @@ ggplot(apple_mob_df%>%filter(date>="2020-11-30"), aes(date, values, col=var))+
     theme(legend.title=element_blank(),
         legend.position='bottom',
         axis.text.x=element_text(angle=45, hjust=1))
-```
-
-
-## Savaitinis mobilumas (vidurkiai)
-
-```{r}
-max.date <- max(apple_mob_df$date)
-period <- max.date-60
-
-apple_mob_last <-apple_mob_df %>%
-  filter(date>="2020-11-02")%>%
-  group_by(var, weeknr)%>%
-  summarise(mean=round(mean(values),1))
-
-ggplot(apple_mob_last, aes(weeknr, mean, fill=var))+
-  geom_bar(stat="identity",
-           position="dodge")+
-  scale_x_continuous(breaks = 1:53)+
-  scale_y_continuous(limits = c(0,max(apple_mob_last$mean)*1.15))+
-  scale_color_brewer(palette="Set1")+
-  labs(title="Apple mobilumo duomenys, indeksas, nuo 2020m lapkričio",
-       subtitle="Šaltinis: covid19.apple.com/mobility, skaičiavimai: Corona-Stat.lt",
-       x="Savaitė", 
-       y="Indeksas 2020-01-13 = 100")+
-  theme(legend.title=element_blank(),
-        legend.position='none',
-        axis.text.x=element_text(angle=45, hjust=1))+
-  geom_text(aes(label=mean, y=mean), size=3, vjust=0.5, hjust=-0.25,  angle=90, position = position_dodge(width = 1))
 ```
